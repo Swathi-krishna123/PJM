@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:patient_journey_management/constants/colors.dart';
 
 class HomePage extends StatelessWidget {
@@ -125,10 +126,9 @@ class HomePage extends StatelessWidget {
                             height: double.infinity,
                           ),
                           Positioned(
-                            right: screenWidth * 0.05, // Adjust the right position
-                            top: screenHeight * 0.05, // Adjust the top position
-                            left: screenWidth * 0.05, // Adjust the top position
-                            bottom: screenHeight * 0.05, // Adjust the top position
+                            right: screenWidth * 0.05,
+                            top: screenHeight * 0.05,
+                           
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
@@ -136,23 +136,36 @@ class HomePage extends StatelessWidget {
                                   items[index]['text'],
                                   style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: screenWidth * 0.05, // Responsive font size
+                                    fontSize: screenWidth * 0.05,
                                     fontWeight: FontWeight.bold,
                                   ),
-                                  overflow: TextOverflow.ellipsis, // Handle overflow
-                                  maxLines: 1, // Limit to 1 line
+                                  overflow: TextOverflow.ellipsis,
+                                  maxLines: 1,
                                 ),
                                 Text(
                                   items[index]['text2'],
                                   style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: screenWidth * 0.05, // Responsive font size
+                                    fontSize: screenWidth * 0.05,
                                     fontWeight: FontWeight.bold,
                                   ),
-                                  overflow: TextOverflow.ellipsis, // Handle overflow
-                                  maxLines: 1, // Limit to 1 line
+                                  overflow: TextOverflow.ellipsis,
+                                  maxLines: 1,
                                 ),
                               ],
+                            ),
+                          ),
+                          // Icon Positioned at the Bottom Right
+                          Positioned(
+                            bottom: screenHeight*0.05,
+                            right: screenWidth * 0.05,
+                            child: IconButton(
+                              onPressed: () {},
+                              icon: SvgPicture.asset(
+                                'assets/icons/arrowicon.svg',
+                                height: screenWidth*0.05,
+                                color: Colors.white,
+                              ),
                             ),
                           ),
                         ],
