@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:patient_journey_management/utilities/custom_bottom_navbar.dart';
 import 'package:patient_journey_management/view/homepage.dart';
 
 import 'package:patient_journey_management/view/splash.dart';
@@ -28,7 +29,8 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       getPages: [
         GetPage(name: '/', page: () => const Splash1()),
-        GetPage(name: '/homepage', page: () => const Homepage()),
+        GetPage(name: '/homepage', page: () => const HomePage()),
+        GetPage(name: '/customBottomNavBar', page: () => const CustomBottomNavigationBar()),
       ],
     );
   }
