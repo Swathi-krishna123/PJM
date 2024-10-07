@@ -18,7 +18,9 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Patient Journey Management',
-      theme: ThemeData(appBarTheme: AppBarTheme(color: Colors.white),
+      theme: ThemeData(
+        scaffoldBackgroundColor: Colors.white,
+        appBarTheme: AppBarTheme(color: Colors.white),
         textTheme: GoogleFonts.latoTextTheme(
           Theme.of(context).textTheme.apply(
                 bodyColor: Colors.black, // Apply default text color

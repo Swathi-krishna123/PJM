@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:patient_journey_management/constants/colors.dart';
+import 'package:patient_journey_management/utilities/custom_widgets/button.dart';
+
+import '../utilities/custom_widgets/headings.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -19,20 +22,30 @@ class HomePage extends StatelessWidget {
         'text2': 'medicine  ',
       },
     ];
+    final List<Map<String, dynamic>> items2 = [
+      {
+        'image': 'assets/homepageimages/Frame 1000001455.png',
+        'text': 'Second',
+        'text2': 'Opinion',
+      },
+      {
+        'image': 'assets/homepageimages/Frame 1000001456.png',
+        'text': 'Peer',
+        'text2': 'Review',
+      },
+    ];
 
     return SafeArea(
       child: Scaffold(
-        backgroundColor: AppColors.background,
+        // backgroundColor: AppColors.background,
         appBar: AppBar(
           automaticallyImplyLeading: false,
-          backgroundColor: AppColors.background,
           leadingWidth: double.infinity,
-          toolbarHeight: 75, // Fixed height for the app bar
+          toolbarHeight: 70,
           actions: [
             const Padding(
               padding: EdgeInsets.only(left: 20),
               child: Row(
-              
                 children: [
                   CircleAvatar(
                     radius: 25,
@@ -40,20 +53,25 @@ class HomePage extends StatelessWidget {
                         AssetImage('assets/homepageimages/Frame 586.png'),
                   ),
                   SizedBox(width: 10),
-                  Column(mainAxisAlignment: MainAxisAlignment.center,children: [
-                    CircleAvatar(
-                      backgroundColor: Color(0xffE1E7EE),
-                      radius: 20,
-                      child: Center(
-                        child: Icon(
-                          Icons.add,
-                          color: Color(0xff336EBD),
-                          size: 15,
+                  Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        CircleAvatar(
+                          backgroundColor: Color(0xffE1E7EE),
+                          radius: 20,
+                          child: Center(
+                            child: Icon(
+                              Icons.add,
+                              color: Color(0xff336EBD),
+                              size: 15,
+                            ),
+                          ),
                         ),
-                      ),
-                    ),
-                    Text('Add member',style: TextStyle(color: Colors.blue),)
-                  ]),
+                        Text(
+                          'Add member',
+                          style: TextStyle(color: Colors.blue),
+                        )
+                      ]),
                 ],
               ),
             ),
@@ -81,7 +99,7 @@ class HomePage extends StatelessWidget {
         ),
         body: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.only(left: 15),
+            padding: const EdgeInsets.only(left: 15, top: 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -187,14 +205,10 @@ class HomePage extends StatelessWidget {
                   },
                   itemCount: items.length,
                 ),
-                const Text(
-                  'Find Hospital near you',
-                  style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w600,
-                      color: Color(0xff283343)),
+                heading('Find Hospital near you'),
+                const SizedBox(
+                  height: 10,
                 ),
-                SizedBox(height: 10,),
                 Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
@@ -350,12 +364,204 @@ class HomePage extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                const Text(
-                  'Doctor you Consulted',
-                  style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w600,
-                      color: Color(0xff283343)),
+                heading('Doctor you Consulted'),
+                const SizedBox(
+                  height: 10,
+                ),
+                Container(
+                  height: 95,
+                  width: 326,
+                  decoration: BoxDecoration(
+                    boxShadow: const [
+                      BoxShadow(
+                        color: Color(0x1A000000), // Shadow color
+                        offset:
+                            Offset(0, 10), // Horizontal and vertical offsets
+                        blurRadius: 15, // Blur radius
+                        spreadRadius: -3, // Spread radius
+                      ),
+                    ],
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(
+                      color: const Color(0xff4987FF)
+                          .withOpacity(0.25), // Border color
+                      width: 1, // Border width
+                    ),
+                  ),
+                  child: Center(
+                    child: Row(
+                      children: [
+                        const Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 15),
+                          child: CircleAvatar(
+                            radius: 20,
+                            backgroundImage: AssetImage(
+                                'assets/homepageimages/Ellipse 190.png'),
+                          ),
+                        ),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Dr. Merin Jacob',
+                              style: TextStyle(
+                                color: AppColors.blue,
+                                fontWeight: FontWeight.w700,
+                                fontSize: 12,
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            const Text(
+                              'Psychologists | Apollo hospital',
+                              style: TextStyle(
+                                  color: Color(0xff7D8A95),
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Container(
+                  height: 220,
+                  width: 326,
+                  decoration: BoxDecoration(
+                    boxShadow: const [
+                      BoxShadow(
+                        color: Color(0x1A000000), // Shadow color
+                        offset:
+                            Offset(0, 10), // Horizontal and vertical offsets
+                        blurRadius: 15, // Blur radius
+                        spreadRadius: -3, // Spread radius
+                      ),
+                    ],
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(
+                      color: const Color(0xff4987FF)
+                          .withOpacity(0.25), // Border color
+                      width: 1, // Border width
+                    ),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 20),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const SizedBox(
+                          height: 25,
+                        ),
+                        Text(
+                          'Booking ID: XXXXXX',
+                          style: TextStyle(
+                            color: AppColors.blue,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Row(
+                          children: [
+                            SvgPicture.asset(
+                              'assets/icons/clockicon.svg',
+                              color: const Color(
+                                0xff363636,
+                              ),
+                              height: 16.67,
+                              width: 16.67,
+                            ),
+                            const SizedBox(
+                              width: 4,
+                            ),
+                            const Text(
+                              'Sep, Wed 20 . 10:00 am - 10:30 am',
+                              style: TextStyle(
+                                  color: Color(0xff515151),
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w400),
+                            )
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Row(
+                          children: [
+                            const CircleAvatar(
+                              radius: 20,
+                              backgroundImage: AssetImage(
+                                  'assets/homepageimages/Ellipse 190.png'),
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Dr. Merin Jacob',
+                                  style: TextStyle(
+                                    color: AppColors.blue,
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 12,
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 5,
+                                ),
+                                const Text(
+                                  'Psychologists | Apollo hospital',
+                                  style: TextStyle(
+                                      color: Color(0xff7D8A95),
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w400),
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
+                        const Padding(
+                          padding:
+                              EdgeInsets.only(right: 20, top: 20, bottom: 20),
+                          child: ButtonCustom(
+                              name: 'Click Here', height: 35, width: 291),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                heading('Featured Services'),
+                SizedBox(
+                  height: 10,
+                ),
+                SizedBox(
+                  height: 200,
+                  child: ListView.builder(
+
+                    scrollDirection: Axis.horizontal,
+                    shrinkWrap: true,
+                    itemCount: 2,
+                    itemBuilder: (context, index) {
+                    return Container(height: 200,width: 150,color: Colors.white,child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: Image.asset(items2[index]['image'],fit: BoxFit.cover,height: double.infinity,width: double.infinity,)),);
+                  },),
                 )
               ],
             ),
