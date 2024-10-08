@@ -190,7 +190,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
   List<Widget> pages = [
     const HomePage(),
     const Notificationpage(),
-    const Appointmentpage(),
+     const AppointmentPage(),
     const Profilepage(),
   ];
 

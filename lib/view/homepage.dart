@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:patient_journey_management/constants/colors.dart';
 import 'package:patient_journey_management/utilities/custom_widgets/button.dart';
 
@@ -15,11 +16,13 @@ class HomePage extends StatelessWidget {
         'image': 'assets/homepageimages/second opinion from doctor.png',
         'text': 'Book an ',
         'text2': 'Appointment ',
+        'route':'/AppointmentType'
       },
       {
         'image': 'assets/homepageimages/telemedicine.png',
         'text': 'Tele -  ',
         'text2': 'medicine  ',
+        'route':'/AppointmentType'
       },
     ];
     final List<Map<String, dynamic>> items2 = [
@@ -147,59 +150,62 @@ class HomePage extends StatelessWidget {
                     childAspectRatio: 1,
                   ),
                   itemBuilder: (context, index) {
-                    return ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
-                      child: Stack(
-                        children: [
-                          Image.asset(
-                            items[index]['image'],
-                            fit: BoxFit.cover,
-                            width: double.infinity,
-                            height: double.infinity,
-                          ),
-                          Positioned(
-                            right: 20,
-                            top: 30,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [
-                                Text(
-                                  items[index]['text'],
-                                  style: const TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                  overflow: TextOverflow.ellipsis,
-                                  maxLines: 1,
-                                ),
-                                Text(
-                                  items[index]['text2'],
-                                  style: const TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                  overflow: TextOverflow.ellipsis,
-                                  maxLines: 1,
-                                ),
-                              ],
+                    return GestureDetector(
+                      onTap: () =>Get.toNamed(items[index]['route']) ,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(10),
+                        child: Stack(
+                          children: [
+                            Image.asset(
+                              items[index]['image'],
+                              fit: BoxFit.cover,
+                              width: double.infinity,
+                              height: double.infinity,
                             ),
-                          ),
-                          // Icon Positioned at the Bottom Right
-                          Positioned(
-                            bottom: 30,
-                            right: 20,
-                            child: IconButton(
-                              onPressed: () {},
-                              icon: SvgPicture.asset(
-                                'assets/icons/arrowicon.svg',
-                                height: 24,
-                                color: Colors.white,
+                            Positioned(
+                              right: 20,
+                              top: 30,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                children: [
+                                  Text(
+                                    items[index]['text'],
+                                    style: const TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                    overflow: TextOverflow.ellipsis,
+                                    maxLines: 1,
+                                  ),
+                                  Text(
+                                    items[index]['text2'],
+                                    style: const TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                    overflow: TextOverflow.ellipsis,
+                                    maxLines: 1,
+                                  ),
+                                ],
                               ),
                             ),
-                          ),
-                        ],
+                            // Icon Positioned at the Bottom Right
+                            Positioned(
+                              bottom: 30,
+                              right: 20,
+                              child: IconButton(
+                                onPressed: () {},
+                                icon: SvgPicture.asset(
+                                  'assets/icons/arrowicon.svg',
+                                  height: 24,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     );
                   },
@@ -543,11 +549,11 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 heading('Featured Services'),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 SizedBox(
@@ -560,7 +566,7 @@ class HomePage extends StatelessWidget {
                     itemBuilder: (context, index) {
                     return Container(height: 200,width: 150,color: Colors.white,child: ClipRRect(
                       borderRadius: BorderRadius.circular(10),
-                      child: Image.asset(items2[index]['image'],fit: BoxFit.cover,height: double.infinity,width: double.infinity,)),);
+                      child: Image.asset(items2[index]['image'],fit: BoxFit.cover,)),);
                   },),
                 )
               ],

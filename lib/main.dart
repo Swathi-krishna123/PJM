@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:patient_journey_management/constants/colors.dart';
 import 'package:patient_journey_management/utilities/custom_bottom_navbar.dart';
+import 'package:patient_journey_management/view/appointment_type.dart';
+import 'package:patient_journey_management/view/appointmentpage.dart';
 import 'package:patient_journey_management/view/homepage.dart';
+import 'package:patient_journey_management/view/notificationpage.dart';
 
 import 'package:patient_journey_management/view/splash.dart';
 
@@ -19,11 +23,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Patient Journey Management',
       theme: ThemeData(
-        scaffoldBackgroundColor: Colors.white,
-        appBarTheme: AppBarTheme(color: Colors.white),
+        scaffoldBackgroundColor:AppColors.background,
+        appBarTheme: AppBarTheme(color:AppColors.background),
         textTheme: GoogleFonts.latoTextTheme(
           Theme.of(context).textTheme.apply(
-                bodyColor: Colors.black, // Apply default text color
+                bodyColor: Color(0xff283343), // Apply default text color
                 displayColor: Colors.black, // Apply default heading color
               ),
         ),
@@ -33,6 +37,9 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/', page: () => const Splash1()),
         GetPage(name: '/homepage', page: () => const HomePage()),
         GetPage(name: '/customBottomNavBar', page: () => const CustomBottomNavigationBar()),
+        GetPage(name: '/Notificationpage', page: () => const Notificationpage()),
+        GetPage(name: '/AppointmentPage', page: () => const AppointmentPage()),
+        GetPage(name: '/AppointmentType', page: () => const AppointmentType()),
       ],
     );
   }

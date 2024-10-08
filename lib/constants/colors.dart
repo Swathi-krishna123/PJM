@@ -10,4 +10,6 @@ class AppColors {
   static Color grey1 = const Color(0xff9CA3AF);
   static Color background= const Color(0xffF4F4F4);// home page background color
   static Color iconbackground= const Color(0xffF3F4F6);// icons background circle avatar
+  static Color textcolor= const Color(0xff283343);
 }
+
