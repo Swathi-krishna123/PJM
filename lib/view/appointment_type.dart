@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:patient_journey_management/utilities/custom_widgets/headings.dart';
+import 'package:patient_journey_management/view/select_hospital.dart';
 
 import '../constants/colors.dart';
 
@@ -10,25 +11,26 @@ class AppointmentType extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-            leading: IconButton(
-              icon: Icon(
-                Icons.arrow_back_ios_rounded,
-                color: AppColors.textcolor,
-                size: 20,
-              ),
-              onPressed: () {
-                Navigator.pop(context); // Navigates back to the previous screen
-              },
+      appBar: AppBar(
+          leading: IconButton(
+            icon: Icon(
+              Icons.arrow_back_ios_rounded,
+              color: AppColors.textcolor,
+              size: 20,
             ),
-            title: Text(
-              'Appointment Type',
-              style: TextStyle(
-                  color: AppColors.textcolor,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w500),
-            )),
-        body: Center(
+            onPressed: () {
+              Navigator.pop(context); // Navigates back to the previous screen
+            },
+          ),
+          title: Text(
+            'Appointment Type',
+            style: TextStyle(
+                color: AppColors.textcolor,
+                fontSize: 16,
+                fontWeight: FontWeight.w500),
+          )),
+      body: Center(
+        child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -36,23 +38,42 @@ class AppointmentType extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              ContainerCustom(
-                color: const Color(0xffDEC4FF),
-                heading: 'Hospital',
-                text: 'Your journey to recovery starts here.',
-                path: 'assets/icons/hospitalicon.svg',
+              GestureDetector(
+                onTap: () {
+                  showDialog(
+                    
+                    context: context,
+                    builder: (context) => SelectHospital(),
+                  );
+                },
+                child: ContainerCustom(
+                  color: const Color(0xffDEC4FF),
+                  heading: 'Hospital',
+                  text: 'Your journey to recovery starts here.',
+                  path: 'assets/icons/hospitalicon.svg',
+                ),
               ),
-              const SizedBox(height: 10,),
+              const SizedBox(
+                height: 10,
+              ),
               ContainerCustom(
                   heading: 'Clinic',
                   text: 'Your health is our priority—let’s check in!',
                   path: 'assets/icons/clinicicon.svg',
                   color: const Color(0xffFFF48E)),
-                  const SizedBox(height: 10,),
-                  ContainerCustom(heading: 'Specialist', text: 'Expert insights for your specific health needs.', path: 'assets/icons/speacialisticon.svg', color: const Color(0xffFFABA5))
+              const SizedBox(
+                height: 10,
+              ),
+              ContainerCustom(
+                  heading: 'Specialist',
+                  text: 'Expert insights for your specific health needs.',
+                  path: 'assets/icons/speacialisticon.svg',
+                  color: const Color(0xffFFABA5))
             ],
           ),
-        ));
+        ),
+      ),
+    );
   }
 }
 

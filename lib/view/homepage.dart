@@ -374,66 +374,7 @@ class HomePage extends StatelessWidget {
                 const SizedBox(
                   height: 10,
                 ),
-                Container(
-                  height: 95,
-                  width: 326,
-                  decoration: BoxDecoration(
-                    boxShadow: const [
-                      BoxShadow(
-                        color: Color(0x1A000000), // Shadow color
-                        offset:
-                            Offset(0, 10), // Horizontal and vertical offsets
-                        blurRadius: 15, // Blur radius
-                        spreadRadius: -3, // Spread radius
-                      ),
-                    ],
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
-                    border: Border.all(
-                      color: const Color(0xff4987FF)
-                          .withOpacity(0.25), // Border color
-                      width: 1, // Border width
-                    ),
-                  ),
-                  child: Center(
-                    child: Row(
-                      children: [
-                        const Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 15),
-                          child: CircleAvatar(
-                            radius: 20,
-                            backgroundImage: AssetImage(
-                                'assets/homepageimages/Ellipse 190.png'),
-                          ),
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Dr. Merin Jacob',
-                              style: TextStyle(
-                                color: AppColors.blue,
-                                fontWeight: FontWeight.w700,
-                                fontSize: 12,
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 5,
-                            ),
-                            const Text(
-                              'Psychologists | Apollo hospital',
-                              style: TextStyle(
-                                  color: Color(0xff7D8A95),
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w400),
-                            ),
-                          ],
-                        )
-                      ],
-                    ),
-                  ),
-                ),
+                ContainerDr(height: 95,),
                 const SizedBox(
                   height: 10,
                 ),
@@ -572,6 +513,78 @@ class HomePage extends StatelessWidget {
               ],
             ),
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class ContainerDr extends StatelessWidget {
+  final double height;
+  const ContainerDr({
+    super.key,
+    required this.height
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: height,
+      width: 326,
+      decoration: BoxDecoration(
+        boxShadow: const [
+          BoxShadow(
+            color: Color(0x1A000000), // Shadow color
+            offset:
+                Offset(0, 10), // Horizontal and vertical offsets
+            blurRadius: 15, // Blur radius
+            spreadRadius: -3, // Spread radius
+          ),
+        ],
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(
+          color: const Color(0xff4987FF)
+              .withOpacity(0.25), // Border color
+          width: 1, // Border width
+        ),
+      ),
+      child: Center(
+        child: Row(
+          children: [
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 15),
+              child: CircleAvatar(
+                radius: 20,
+                backgroundImage: AssetImage(
+                    'assets/homepageimages/Ellipse 190.png'),
+              ),
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Dr. Merin Jacob',
+                  style: TextStyle(
+                    color: AppColors.blue,
+                    fontWeight: FontWeight.w700,
+                    fontSize: 12,
+                  ),
+                ),
+                const SizedBox(
+                  height: 5,
+                ),
+                const Text(
+                  'Psychologists | Apollo hospital',
+                  style: TextStyle(
+                      color: Color(0xff7D8A95),
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400),
+                ),
+              ],
+            )
+          ],
         ),
       ),
     );
