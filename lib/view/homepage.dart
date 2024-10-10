@@ -378,6 +378,11 @@ class HomePage extends StatelessWidget {
                 const SizedBox(
                   height: 10,
                 ),
+                heading('My Consultations'),
+                const SizedBox(
+                  height: 10,
+                ),
+
                 Container(
                   height: 220,
                   width: 326,
@@ -480,11 +485,14 @@ class HomePage extends StatelessWidget {
                             )
                           ],
                         ),
-                        const Padding(
-                          padding:
-                              EdgeInsets.only(right: 20, top: 20, bottom: 20),
-                          child: ButtonCustom(
-                              name: 'Click Here', height: 35, width: 291),
+                        GestureDetector(
+                          onTap: () =>Get.toNamed('MyConsultations') ,
+                          child: const Padding(
+                            padding:
+                                EdgeInsets.only(right: 20, top: 20, bottom: 20),
+                            child: ButtonCustom(
+                                name: 'Click Here', height: 35, width: 291),
+                          ),
                         )
                       ],
                     ),

@@ -6,6 +6,7 @@ import 'package:patient_journey_management/utilities/custom_bottom_navbar.dart';
 import 'package:patient_journey_management/view/appointment_type.dart';
 import 'package:patient_journey_management/view/appointmentpage.dart';
 import 'package:patient_journey_management/view/homepage.dart';
+import 'package:patient_journey_management/view/myconsultations.dart';
 import 'package:patient_journey_management/view/notificationpage.dart';
 import 'package:patient_journey_management/view/select_datetime.dart';
 import 'package:patient_journey_management/view/select_hospital.dart';
@@ -48,6 +49,8 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/AppointmentType', page: () => const AppointmentType()),
         GetPage(name: '/AppointmentType', page: () => const SelectHospital()),
         GetPage(name: '/SelectDateAndTime', page: () => const SelectDateAndTime()),
+        GetPage(name: '/CustomBottomNavigationBar', page: () => const CustomBottomNavigationBar()),
+        GetPage(name: '/MyConsultations', page: () => const MyConsultations()),
       ],
     );
   }
