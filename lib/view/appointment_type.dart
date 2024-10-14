@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:patient_journey_management/utilities/custom_widgets/headings.dart';
 import 'package:patient_journey_management/view/select_hospital.dart';
@@ -16,7 +17,7 @@ class AppointmentType extends StatelessWidget {
             icon: Icon(
               Icons.arrow_back_ios_rounded,
               color: AppColors.textcolor,
-              size: 20,
+              size: 20.sp,
             ),
             onPressed: () {
               Navigator.pop(context); // Navigates back to the previous screen
@@ -26,7 +27,7 @@ class AppointmentType extends StatelessWidget {
             'Appointment Type',
             style: TextStyle(
                 color: AppColors.textcolor,
-                fontSize: 16,
+                fontSize: 16.sp,
                 fontWeight: FontWeight.w500),
           )),
       body: Center(
@@ -35,8 +36,8 @@ class AppointmentType extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               heading('Choose Appointment Type'),
-              const SizedBox(
-                height: 10,
+               SizedBox(
+                height: 10.h,
               ),
               GestureDetector(
                 onTap: () {
@@ -53,16 +54,16 @@ class AppointmentType extends StatelessWidget {
                   path: 'assets/icons/hospitalicon.svg',
                 ),
               ),
-              const SizedBox(
-                height: 10,
+               SizedBox(
+                height: 10.h,
               ),
               ContainerCustom(
                   heading: 'Clinic',
                   text: 'Your health is our priority—let’s check in!',
                   path: 'assets/icons/clinicicon.svg',
                   color: const Color(0xffFFF48E)),
-              const SizedBox(
-                height: 10,
+               SizedBox(
+                height: 10.h,
               ),
               ContainerCustom(
                   heading: 'Specialist',
@@ -93,10 +94,10 @@ class ContainerCustom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 150,
-      width: 326,
+      height: 150.h,
+      width: 326.w,
       decoration: BoxDecoration(
-          borderRadius: const BorderRadius.all(Radius.circular(10)),
+          borderRadius:  BorderRadius.all(Radius.circular(10.r)),
           image: const DecorationImage(
               image: AssetImage(
                   'assets/appointmentpageimages/containerbackground.jpeg'),
@@ -104,39 +105,39 @@ class ContainerCustom extends StatelessWidget {
               fit: BoxFit.cover),
           color: color),
       child: Padding(
-        padding: const EdgeInsets.only(left: 20, top: 20),
+        padding:  EdgeInsets.only(left: 20.w, top: 20.h),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CircleAvatar(
-              radius: 25,
+              radius: 25.r,
               backgroundColor: Colors.white,
               child: Center(
                   child: SvgPicture.asset(
                 path,
-                height: 24,
-                width: 24,
+                height: 24.h,
+                width: 24.w,
               )),
             ),
-            const SizedBox(
-              height: 5,
+             SizedBox(
+              height: 5.h,
             ),
             Text(
               heading,
-              style: const TextStyle(
+              style:  TextStyle(
                   color: Color(0xff283343),
-                  fontSize: 18,
+                  fontSize: 18.sp,
                   fontWeight: FontWeight.w400),
             ),
-            const SizedBox(
-              height: 5,
+             SizedBox(
+              height: 5.h,
             ),
             Text(
               text,
-              style: const TextStyle(
+              style:  TextStyle(
                   color: Color(0xff283343),
-                  fontSize: 14,
+                  fontSize: 14.sp,
                   fontWeight: FontWeight.w300),
             )
           ],

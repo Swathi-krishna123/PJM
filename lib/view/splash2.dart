@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../constants/colors.dart';
 
 class Splash2 extends StatelessWidget {
@@ -11,11 +11,13 @@ class Splash2 extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          Spacer(),
+          const Spacer(),
           Padding(
-            padding: const EdgeInsets.all(15),
+            padding: EdgeInsets.all(15.w), // Use .w for responsive padding
             child: Image.asset(
               'assets/splash_images/splash.png',
+              height: 370.h, // Example of responsive height
+              width: 370.w,  // Example of responsive width
             ),
           ),
           Column(
@@ -24,7 +26,7 @@ class Splash2 extends StatelessWidget {
                 'Your Health,',
                 style: TextStyle(
                   color: AppColors.blue,
-                  fontSize: 26,
+                  fontSize: 26.sp, // Responsive font size
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -32,22 +34,20 @@ class Splash2 extends StatelessWidget {
                 'One Tap Away',
                 style: TextStyle(
                   color: AppColors.blue,
-                  fontSize: 26,
+                  fontSize: 26.sp, // Responsive font size
                   fontWeight: FontWeight.w600,
                 ),
               ),
             ],
           ),
-          const SizedBox(
-            height: 10,
-          ),
+          SizedBox(height: 10.h), // Responsive spacing
           Column(
             children: [
               Text(
                 'Connect with Specialized Doctors for your time &',
                 style: TextStyle(
                   color: AppColors.blue50,
-                  fontSize: 14,
+                  fontSize: 14.sp, // Responsive font size
                   fontWeight: FontWeight.w500,
                 ),
               ),
@@ -55,15 +55,13 @@ class Splash2 extends StatelessWidget {
                 'Comprehensive Medical Consultations.',
                 style: TextStyle(
                   color: AppColors.blue50,
-                  fontSize: 14, // Responsive font size
+                  fontSize: 14.sp, // Responsive font size
                   fontWeight: FontWeight.w500,
                 ),
               ),
             ],
           ),
-          const SizedBox(
-            height: 10,
-          ),
+          SizedBox(height: 10.h), // Responsive spacing
           Column(
             children: [
               GestureDetector(
@@ -72,32 +70,32 @@ class Splash2 extends StatelessWidget {
                   Get.toNamed('/customBottomNavBar');
                 },
                 child: Container(
-                  width: 326,
-                  height: 40,
+                  width: 326.w, // Responsive width
+                  height: 40.h, // Responsive height
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(4),
+                    borderRadius: BorderRadius.circular(4.r), // Responsive radius
                     gradient: LinearGradient(
                       colors: [
                         AppColors.bluegradient1,
-                        AppColors.bluegradient2
+                        AppColors.bluegradient2,
                       ],
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                     ),
                   ),
-                  child: const Center(
+                  child: Center(
                     child: Text(
                       'Get Started',
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 12,
+                        fontSize: 12.sp, // Responsive font size
                         fontWeight: FontWeight.w600,
                       ),
                     ),
                   ),
                 ),
               ),
-              const SizedBox(height: 5),
+              SizedBox(height: 5.h), // Responsive spacing
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -105,34 +103,34 @@ class Splash2 extends StatelessWidget {
                     'By signing up, you agree to our',
                     style: TextStyle(
                       color: AppColors.grey,
-                      fontSize: 8,
+                      fontSize: 8.sp, // Responsive font size
                       fontWeight: FontWeight.w400,
                     ),
                   ),
-                  const SizedBox(width: 4),
+                  SizedBox(width: 4.w), // Responsive spacing
                   Text(
                     'Terms and Conditions',
                     style: TextStyle(
                       color: AppColors.blue,
-                      fontSize: 8,
+                      fontSize: 8.sp, // Responsive font size
                       fontWeight: FontWeight.w400,
                     ),
                   ),
-                  const SizedBox(width: 4),
+                  SizedBox(width: 4.w), // Responsive spacing
                   Text(
                     '&',
                     style: TextStyle(
                       color: AppColors.grey,
-                      fontSize: 8,
+                      fontSize: 8.sp, // Responsive font size
                       fontWeight: FontWeight.w400,
                     ),
                   ),
-                  const SizedBox(width: 4),
+                  SizedBox(width: 4.w), // Responsive spacing
                   Text(
                     'Privacy Policy.',
                     style: TextStyle(
                       color: AppColors.blue,
-                      fontSize: 8,
+                      fontSize: 8.sp, // Responsive font size
                       fontWeight: FontWeight.w400,
                     ),
                   ),
@@ -140,7 +138,7 @@ class Splash2 extends StatelessWidget {
               ),
             ],
           ),
-          const Spacer()
+          const Spacer(),
         ],
       ),
     );

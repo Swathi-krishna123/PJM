@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:patient_journey_management/constants/colors.dart';
@@ -16,25 +17,13 @@ class HomePage extends StatelessWidget {
         'image': 'assets/homepageimages/second opinion from doctor.png',
         'text': 'Book an ',
         'text2': 'Appointment ',
-        'route':'/AppointmentType'
+        'route': '/AppointmentType'
       },
       {
         'image': 'assets/homepageimages/telemedicine.png',
         'text': 'Tele -  ',
         'text2': 'medicine  ',
-        'route':'/AppointmentType'
-      },
-    ];
-    final List<Map<String, dynamic>> items2 = [
-      {
-        'image': 'assets/homepageimages/Frame 1000001455.png',
-        'text': 'Second',
-        'text2': 'Opinion',
-      },
-      {
-        'image': 'assets/homepageimages/Frame 1000001456.png',
-        'text': 'Peer',
-        'text2': 'Review',
+        'route': '/AppointmentType'
       },
     ];
 
@@ -43,35 +32,36 @@ class HomePage extends StatelessWidget {
         // backgroundColor: AppColors.background,
         appBar: AppBar(
           automaticallyImplyLeading: false,
-          leadingWidth: double.infinity,
-          toolbarHeight: 70,
+          leadingWidth: 1.sw,
+          toolbarHeight: 70.h,
+          surfaceTintColor: Colors.white,
           actions: [
-            const Padding(
-              padding: EdgeInsets.only(left: 20),
+             Padding(
+              padding: EdgeInsets.only(left: 20.w),
               child: Row(
                 children: [
                   CircleAvatar(
-                    radius: 25,
+                    radius: 25.r,
                     backgroundImage:
-                        AssetImage('assets/homepageimages/Frame 586.png'),
+                        const AssetImage('assets/homepageimages/Frame 586.png'),
                   ),
-                  SizedBox(width: 10),
+                  SizedBox(width: 10.w),
                   Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         CircleAvatar(
-                          backgroundColor: Color(0xffE1E7EE),
-                          radius: 20,
+                          backgroundColor: const Color(0xffE1E7EE),
+                          radius: 20.r,
                           child: Center(
                             child: Icon(
                               Icons.add,
-                              color: Color(0xff336EBD),
-                              size: 15,
+                              color: const Color(0xff336EBD),
+                              size: 15.sp,
                             ),
                           ),
                         ),
-                        Text(
-                          'Add member',
+                        const Text(
+                          'Add Member',
                           style: TextStyle(color: Colors.blue),
                         )
                       ]),
@@ -80,20 +70,20 @@ class HomePage extends StatelessWidget {
             ),
             const Spacer(),
             Padding(
-              padding: const EdgeInsets.only(right: 20),
+              padding: EdgeInsets.only(right: 20.w),
               child: Row(
                 children: [
-                  const Text(
+                  Text(
                     'Kochi  ',
                     style: TextStyle(
-                      fontSize: 14,
-                      color: Color(0xff515151),
+                      fontSize: 14.sp,
+                      color: const Color(0xff515151),
                     ),
                   ),
                   SvgPicture.asset(
                     'assets/icons/arrowdown.svg',
                     color: const Color(0xff515151),
-                    height: 6,
+                    height: 6.h,
                   ),
                 ],
               ),
@@ -102,17 +92,17 @@ class HomePage extends StatelessWidget {
         ),
         body: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.only(left: 15, top: 20),
+            padding:  EdgeInsets.only(left: 15.w, top: 20.h),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
-                  height: 48,
-                  width: 326,
+                  height: 48.h,
+                  width: 326.w,
                   child: TextFormField(
                     cursorColor: const Color(0xff515151),
                     decoration: InputDecoration(
-                      contentPadding: const EdgeInsets.symmetric(vertical: 25),
+                      contentPadding:  EdgeInsets.symmetric(vertical:25.h),
                       focusedBorder: const OutlineInputBorder(
                         borderSide: BorderSide(color: Color(0xffCCCCCC)),
                       ),
@@ -120,40 +110,40 @@ class HomePage extends StatelessWidget {
                       hintText:
                           'Search by Specialist/Category/Condition/Hospital',
                       prefixIcon: Padding(
-                        padding: const EdgeInsets.all(15),
+                        padding:  EdgeInsets.all(15.w),
                         child: SvgPicture.asset(
                           'assets/icons/searchicon.svg',
                           color: const Color(0xff909090),
-                          height: 16.67,
-                          width: 16.67,
+                          height: 16.67.h,
+                          width: 16.67.w,
                         ),
                       ),
-                      hintStyle: const TextStyle(
-                        color: Color(0xff909090),
-                        fontSize: 12,
+                      hintStyle:  TextStyle(
+                        color: const Color(0xff909090),
+                        fontSize: 12.sp,
                       ),
                       enabledBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
-                          color: Color(0xffCCCCCC),
-                          width: 1,
+                        borderSide:  BorderSide(
+                          color: const Color(0xffCCCCCC),
+                          width: 1.w,
                         ),
-                        borderRadius: BorderRadius.circular(8),
+                        borderRadius: BorderRadius.circular(8.r),
                       ),
                     ),
                   ),
                 ),
                 GridView.builder(
                   shrinkWrap: true,
-                  padding: const EdgeInsets.symmetric(vertical: 10),
+                  padding:  EdgeInsets.symmetric(vertical: 10.h),
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                     childAspectRatio: 1,
                   ),
                   itemBuilder: (context, index) {
                     return GestureDetector(
-                      onTap: () =>Get.toNamed(items[index]['route']) ,
+                      onTap: () => Get.toNamed(items[index]['route']),
                       child: ClipRRect(
-                        borderRadius: BorderRadius.circular(10),
+                        borderRadius: BorderRadius.circular(10.r),
                         child: Stack(
                           children: [
                             Image.asset(
@@ -163,16 +153,16 @@ class HomePage extends StatelessWidget {
                               height: double.infinity,
                             ),
                             Positioned(
-                              right: 20,
-                              top: 30,
+                              right: 20.w,
+                              top: 30.h,
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.end,
                                 children: [
                                   Text(
                                     items[index]['text'],
-                                    style: const TextStyle(
+                                    style:  TextStyle(
                                       color: Colors.white,
-                                      fontSize: 15,
+                                      fontSize: 15.sp,
                                       fontWeight: FontWeight.bold,
                                     ),
                                     overflow: TextOverflow.ellipsis,
@@ -180,9 +170,9 @@ class HomePage extends StatelessWidget {
                                   ),
                                   Text(
                                     items[index]['text2'],
-                                    style: const TextStyle(
+                                    style:  TextStyle(
                                       color: Colors.white,
-                                      fontSize: 15,
+                                      fontSize: 15.sp,
                                       fontWeight: FontWeight.bold,
                                     ),
                                     overflow: TextOverflow.ellipsis,
@@ -193,13 +183,13 @@ class HomePage extends StatelessWidget {
                             ),
                             // Icon Positioned at the Bottom Right
                             Positioned(
-                              bottom: 30,
-                              right: 20,
+                              bottom: 30.h,
+                              right: 20.w,
                               child: IconButton(
                                 onPressed: () {},
                                 icon: SvgPicture.asset(
                                   'assets/icons/arrowicon.svg',
-                                  height: 24,
+                                  height: 24.h,
                                   color: Colors.white,
                                 ),
                               ),
@@ -212,23 +202,23 @@ class HomePage extends StatelessWidget {
                   itemCount: items.length,
                 ),
                 heading('Find Hospital near you'),
-                const SizedBox(
-                  height: 10,
+                 SizedBox(
+                  height: 10.h,
                 ),
                 Container(
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    boxShadow: const [
+                    borderRadius: BorderRadius.circular(15.r),
+                    boxShadow:  [
                       BoxShadow(
-                        color: Color(0x1A000000), // Shadow color
+                        color: const Color(0x1A000000), // Shadow color
                         offset:
-                            Offset(0, 10), // Horizontal and vertical offsets
-                        blurRadius: 15, // Blur radius
-                        spreadRadius: -3, // Spread radius
+                            Offset(0.w, 10.h), // Horizontal and vertical offsets
+                        blurRadius: 15.r, // Blur radius
+                        spreadRadius: -3.r, // Spread radius
                       ),
                     ],
                   ),
-                  constraints: const BoxConstraints(maxHeight: 256),
+                  constraints:  BoxConstraints(maxHeight: 256.h),
                   child: ListView.builder(
                     shrinkWrap: true,
                     scrollDirection: Axis.horizontal,
@@ -237,121 +227,121 @@ class HomePage extends StatelessWidget {
                       return Stack(
                         children: [
                           Padding(
-                            padding: const EdgeInsets.only(right: 8, top: 10),
+                            padding:  EdgeInsets.only(right: 8.w, top: 10.h),
                             child: Stack(
                               children: [
                                 Container(
-                                  width: 200,
+                                  width: 200.w,
                                   decoration: BoxDecoration(
                                       color: Colors.white,
-                                      borderRadius: BorderRadius.circular(8)),
+                                      borderRadius: BorderRadius.circular(8.r)),
                                   child: Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
                                       ClipRRect(
-                                        borderRadius: const BorderRadius.only(
-                                            topLeft: Radius.circular(8),
-                                            topRight: Radius.circular(8)),
+                                        borderRadius:  BorderRadius.only(
+                                            topLeft: Radius.circular(8.r),
+                                            topRight: Radius.circular(8.r)),
                                         child: Image.asset(
                                           'assets/homepageimages/Image (2).png',
-                                          height: 121,
-                                          width: 200,
+                                          height: 121.h,
+                                          width: 200.w,
                                           fit: BoxFit.cover,
                                         ),
                                       ),
-                                      const Padding(
+                                       Padding(
                                         padding: EdgeInsets.only(
-                                            left: 15, top: 15, bottom: 5),
+                                            left: 15.w, top: 15.h, bottom: 5.h),
                                         child: Text(
                                           'Apollo Hospital',
                                           style: TextStyle(
                                               fontWeight: FontWeight.w700,
-                                              fontSize: 14),
+                                              fontSize: 14.sp),
                                         ),
                                       ),
                                       Padding(
                                         padding:
-                                            const EdgeInsets.only(left: 15),
+                                             EdgeInsets.only(left: 15.w),
                                         child: Row(
                                           children: [
                                             SvgPicture.asset(
                                               'assets/icons/locationicon.svg',
                                               color: const Color(0xff6B7280),
                                               fit: BoxFit.cover,
-                                              height: 14,
-                                              width: 14,
+                                              height: 14.h,
+                                              width: 14.w,
                                             ),
-                                            const SizedBox(
-                                              width: 4,
+                                             SizedBox(
+                                              width: 4.w,
                                             ),
-                                            const Text(
+                                             Text(
                                               '123 Oak Street, CA 98765',
                                               style: TextStyle(
-                                                  fontSize: 12,
-                                                  color: Color(0xff6B7280)),
+                                                  fontSize: 12.sp,
+                                                  color: const Color(0xff6B7280)),
                                             )
                                           ],
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsets.only(
-                                            left: 15, top: 5),
+                                        padding:  EdgeInsets.only(
+                                            left: 15.w, top: 5.h),
                                         child: Row(
                                           children: [
-                                            const Text(
+                                             Text(
                                               '5.0',
                                               style: TextStyle(
-                                                  color: Color(0xff6B7280),
+                                                  color: const Color(0xff6B7280),
                                                   fontWeight: FontWeight.w700,
-                                                  fontSize: 12),
+                                                  fontSize: 12.sp),
                                             ),
-                                            const SizedBox(
-                                              width: 4,
+                                             SizedBox(
+                                              width: 4.w,
                                             ),
                                             SvgPicture.asset(
                                               'assets/icons/starsicon.svg',
-                                              height: 10,
-                                              width: 10.7,
+                                              height: 10.h,
+                                              width: 10.7.w,
                                             ),
-                                            const SizedBox(
-                                              width: 4,
+                                             SizedBox(
+                                              width: 4.w,
                                             ),
-                                            const Text(
+                                             Text(
                                               '(128 Reviews)',
                                               style: TextStyle(
-                                                  color: Color(0xff6B7280),
-                                                  fontSize: 12,
+                                                  color: const Color(0xff6B7280),
+                                                  fontSize: 12.sp,
                                                   fontWeight: FontWeight.w400),
                                             )
                                           ],
                                         ),
                                       ),
-                                      const Divider(
-                                        color: Color(0xffE5E7EB),
-                                        indent: 15,
-                                        endIndent: 15,
+                                       Divider(
+                                        color: const Color(0xffE5E7EB),
+                                        indent: 15.w,
+                                        endIndent: 15.w,
                                       ),
                                       Padding(
-                                        padding: const EdgeInsets.only(
-                                            left: 15, top: 5),
+                                        padding:  EdgeInsets.only(
+                                            left: 15.w, top: 5.h),
                                         child: Row(
                                           children: [
                                             SvgPicture.asset(
                                               'assets/icons/kmicon.svg',
-                                              height: 16,
-                                              width: 16,
+                                              height: 16.h,
+                                              width: 16.w,
                                               color: const Color(0xff9CA3AF),
                                             ),
-                                            const SizedBox(
-                                              width: 10,
+                                             SizedBox(
+                                              width: 10.w,
                                             ),
-                                            const Text(
+                                           Text(
                                               '2.5 km/40min',
                                               style: TextStyle(
                                                   fontWeight: FontWeight.w400,
-                                                  fontSize: 12,
-                                                  color: Color(0xff6B7280)),
+                                                  fontSize: 12.sp,
+                                                  color: const Color(0xff6B7280)),
                                             )
                                           ],
                                         ),
@@ -367,62 +357,63 @@ class HomePage extends StatelessWidget {
                     },
                   ),
                 ),
-                const SizedBox(
-                  height: 20,
+                 SizedBox(
+                  height: 20.h,
                 ),
                 heading('Doctor you Consulted'),
-                const SizedBox(
-                  height: 10,
+                 SizedBox(
+                  height: 10.h,
                 ),
-                ContainerDr(height: 95,),
-                const SizedBox(
-                  height: 10,
+                 ContainerDr(
+                  height: 95.h,
+                ),
+                 SizedBox(
+                  height: 10.h,
                 ),
                 heading('My Consultations'),
-                const SizedBox(
-                  height: 10,
+                 SizedBox(
+                  height: 10.h,
                 ),
-
                 Container(
-                  height: 220,
-                  width: 326,
+                  height: 220.h,
+                  width: 326.w,
                   decoration: BoxDecoration(
-                    boxShadow: const [
+                    boxShadow:  [
                       BoxShadow(
-                        color: Color(0x1A000000), // Shadow color
+                        color: const Color(0x1A000000), // Shadow color
                         offset:
-                            Offset(0, 10), // Horizontal and vertical offsets
-                        blurRadius: 15, // Blur radius
-                        spreadRadius: -3, // Spread radius
+                            const Offset(0, 10), // Horizontal and vertical offsets
+                        blurRadius: 15..r, // Blur radius
+                        spreadRadius: -3.r, // Spread radius
                       ),
                     ],
                     color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(10.r),
                     border: Border.all(
                       color: const Color(0xff4987FF)
                           .withOpacity(0.25), // Border color
-                      width: 1, // Border width
+                      width: 1.w, // Border width
                     ),
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.only(left: 20),
+                    padding:  EdgeInsets.only(left: 20.w),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const SizedBox(
-                          height: 25,
+                         SizedBox(
+                          height: 25.h,
                         ),
                         Text(
                           'Booking ID: XXXXXX',
                           style: TextStyle(
                             color: AppColors.blue,
-                            fontSize: 14,
+                            fontSize: 14.sp,
                             fontWeight: FontWeight.w400,
                           ),
                         ),
-                        const SizedBox(
-                          height: 10,
+                         SizedBox(
+                          height: 10.h,
                         ),
                         Row(
                           children: [
@@ -431,33 +422,33 @@ class HomePage extends StatelessWidget {
                               color: const Color(
                                 0xff363636,
                               ),
-                              height: 16.67,
-                              width: 16.67,
+                              height: 16.67.h,
+                              width: 16.67.h,
                             ),
-                            const SizedBox(
-                              width: 4,
+                             SizedBox(
+                              width: 4.w,
                             ),
-                            const Text(
+                             Text(
                               'Sep, Wed 20 . 10:00 am - 10:30 am',
                               style: TextStyle(
-                                  color: Color(0xff515151),
-                                  fontSize: 12,
+                                  color: const Color(0xff515151),
+                                  fontSize: 12.sp,
                                   fontWeight: FontWeight.w400),
                             )
                           ],
                         ),
-                        const SizedBox(
-                          height: 20,
+                         SizedBox(
+                          height: 20.h,
                         ),
                         Row(
                           children: [
-                            const CircleAvatar(
-                              radius: 20,
-                              backgroundImage: AssetImage(
+                             CircleAvatar(
+                              radius: 20.r,
+                              backgroundImage: const AssetImage(
                                   'assets/homepageimages/Ellipse 190.png'),
                             ),
-                            const SizedBox(
-                              width: 10,
+                             SizedBox(
+                              width: 10.w,
                             ),
                             Column(
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -468,17 +459,17 @@ class HomePage extends StatelessWidget {
                                   style: TextStyle(
                                     color: AppColors.blue,
                                     fontWeight: FontWeight.w700,
-                                    fontSize: 12,
+                                    fontSize: 12.sp,
                                   ),
                                 ),
-                                const SizedBox(
-                                  height: 5,
+                                 SizedBox(
+                                  height: 5.h,
                                 ),
-                                const Text(
+                                 Text(
                                   'Psychologists | Apollo hospital',
                                   style: TextStyle(
-                                      color: Color(0xff7D8A95),
-                                      fontSize: 12,
+                                      color: const Color(0xff7D8A95),
+                                      fontSize: 12.sp,
                                       fontWeight: FontWeight.w400),
                                 ),
                               ],
@@ -486,38 +477,47 @@ class HomePage extends StatelessWidget {
                           ],
                         ),
                         GestureDetector(
-                          onTap: () =>Get.toNamed('MyConsultations') ,
-                          child: const Padding(
+                          onTap: () => Get.toNamed('MyConsultations'),
+                          child:  Padding(
                             padding:
-                                EdgeInsets.only(right: 20, top: 20, bottom: 20),
+                                EdgeInsets.only(right: 20.w, top: 20.h, bottom: 20.h),
                             child: ButtonCustom(
-                                name: 'Click Here', height: 35, width: 291),
+                                name: 'Click Here', height: 35.h, width: 291.w),
                           ),
                         )
                       ],
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 20,
+                 SizedBox(
+                  height: 20.h,
                 ),
                 heading('Featured Services'),
-                const SizedBox(
-                  height: 10,
+                 SizedBox(
+                  height: 10.h,
                 ),
-                SizedBox(
-                  height: 200,
-                  child: ListView.builder(
-
-                    scrollDirection: Axis.horizontal,
-                    shrinkWrap: true,
-                    itemCount: 2,
-                    itemBuilder: (context, index) {
-                    return Container(height: 200,width: 150,color: Colors.white,child: ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
-                      child: Image.asset(items2[index]['image'],fit: BoxFit.cover,)),);
-                  },),
-                )
+                Padding(
+                  padding:  EdgeInsets.only(right: 20.w, bottom: 20.h),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container3(
+                        text1: 'Second',
+                        text2: 'Opinion',
+                        path: 'assets/homepageimages/Frame 1000001455 (1).png',
+                      ),
+                      Container3(
+                          text1: 'Peer',
+                          text2: 'Review',
+                          path: 'assets/homepageimages/Frame 1000001456.png')
+                    ],
+                  ),
+                ),
+                Center(
+                    child: Container3(
+                        text1: 'US',
+                        text2: 'InPatient',
+                        path: 'assets/homepageimages/Frame 1000001457.png'))
               ],
             ),
           ),
@@ -527,45 +527,99 @@ class HomePage extends StatelessWidget {
   }
 }
 
+class Container3 extends StatelessWidget {
+  String text1;
+  String text2;
+  String path;
+  Container3(
+      {super.key,
+      required this.text1,
+      required this.text2,
+      required this.path});
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        Container(
+          height: 200.h,
+          width: 150.w,
+          decoration: BoxDecoration(
+            image: DecorationImage(image: AssetImage(path), fit: BoxFit.cover),
+          ),
+        ),
+        Positioned(
+          left: 10.w,
+          top: 10.h,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                text1,
+                style:  TextStyle(
+                    color: const Color(0xffFFFFFF),
+                    fontSize: 15.sp,
+                    fontWeight: FontWeight.w700),
+              ),
+              Text(
+                text2,
+                style:  TextStyle(
+                    color: const Color(0xffFFFFFF),
+                    fontSize: 15.sp,
+                    fontWeight: FontWeight.w700),
+              ),
+            ],
+          ),
+        ),
+        Positioned(
+            right: 20.w,
+            top: 20.h,
+            child: SvgPicture.asset(
+              'assets/icons/arrowicon.svg',
+              color: Colors.white,
+              height: 24.h,
+              width: 24.w,
+            ))
+      ],
+    );
+  }
+}
+
 class ContainerDr extends StatelessWidget {
   final double height;
-  const ContainerDr({
-    super.key,
-    required this.height
-  });
+  const ContainerDr({super.key, required this.height});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       height: height,
-      width: 326,
+      width: 326.w,
       decoration: BoxDecoration(
-        boxShadow: const [
+        boxShadow:  [
           BoxShadow(
-            color: Color(0x1A000000), // Shadow color
-            offset:
-                Offset(0, 10), // Horizontal and vertical offsets
-            blurRadius: 15, // Blur radius
-            spreadRadius: -3, // Spread radius
+            color: const Color(0x1A000000), // Shadow color
+            offset: const Offset(0, 10), // Horizontal and vertical offsets
+            blurRadius: 15.r, // Blur radius
+            spreadRadius: -3.r, // Spread radius
           ),
         ],
         color: Colors.white,
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(10.r),
         border: Border.all(
-          color: const Color(0xff4987FF)
-              .withOpacity(0.25), // Border color
-          width: 1, // Border width
+          color: const Color(0xff4987FF).withOpacity(0.25), // Border color
+          width: 1.w, // Border width
         ),
       ),
       child: Center(
         child: Row(
           children: [
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 15),
+             Padding(
+              padding: EdgeInsets.symmetric(horizontal: 15.w),
               child: CircleAvatar(
-                radius: 20,
-                backgroundImage: AssetImage(
-                    'assets/homepageimages/Ellipse 190.png'),
+                radius: 20.r,
+                backgroundImage:
+                    const AssetImage('assets/homepageimages/Ellipse 190.png'),
               ),
             ),
             Column(
@@ -577,17 +631,17 @@ class ContainerDr extends StatelessWidget {
                   style: TextStyle(
                     color: AppColors.blue,
                     fontWeight: FontWeight.w700,
-                    fontSize: 12,
+                    fontSize: 12.sp,
                   ),
                 ),
-                const SizedBox(
-                  height: 5,
+                 SizedBox(
+                  height: 5.h,
                 ),
-                const Text(
+                 Text(
                   'Psychologists | Apollo hospital',
                   style: TextStyle(
-                      color: Color(0xff7D8A95),
-                      fontSize: 12,
+                      color: const Color(0xff7D8A95),
+                      fontSize: 12.sp,
                       fontWeight: FontWeight.w400),
                 ),
               ],
