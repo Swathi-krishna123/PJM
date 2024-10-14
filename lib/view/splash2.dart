@@ -87,7 +87,7 @@ class Splash2 extends StatelessWidget {
                     child: Text(
                       'Get Started',
                       style: TextStyle(
-                        color: Colors.white,
+                        color:AppColors.white,
                         fontSize: 12.sp, // Responsive font size
                         fontWeight: FontWeight.w600,
                       ),

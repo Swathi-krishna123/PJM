@@ -43,17 +43,17 @@ class AppointmentStatus extends StatelessWidget {
                   decoration: BoxDecoration(
                     boxShadow: [
                       BoxShadow(
-                        color: Color(0x1A000000), // Shadow color
-                        offset:
-                            Offset(0, 10), // Horizontal and vertical offsets
+                        color: AppColors.shadow, // Shadow color
+                        offset: const Offset(
+                            0, 10), // Horizontal and vertical offsets
                         blurRadius: 15.r, // Blur radius
                         spreadRadius: -3.r, // Spread radius
                       ),
                     ],
-                    color: Colors.white,
+                    color: AppColors.white,
                     borderRadius: BorderRadius.circular(10.r),
                     border: Border.all(
-                      color: const Color(0xffFFD5C4), // Border color
+                      color: AppColors.bordercolor, // Border color
                       width: 1.w, // Border width
                     ),
                   ),
@@ -62,12 +62,12 @@ class AppointmentStatus extends StatelessWidget {
                     children: [
                       Container(
                         height: 35.h,
-                        color: const Color(0xffFFD5C4),
+                        color: AppColors.bordercolor,
                         child: Center(
                           child: Text(
                             'Case Closed',
                             style: TextStyle(
-                                color: Color(0xff771D1D),
+                                color: AppColors.red1,
                                 fontSize: 14.sp,
                                 fontWeight: FontWeight.w400),
                           ),
@@ -93,9 +93,7 @@ class AppointmentStatus extends StatelessWidget {
                           children: [
                             SvgPicture.asset(
                               'assets/icons/clockicon.svg',
-                              color: const Color(
-                                0xff363636,
-                              ),
+                              color: AppColors.grey4,
                               height: 16.67.h,
                               width: 16.67.w,
                             ),
@@ -105,7 +103,7 @@ class AppointmentStatus extends StatelessWidget {
                             Text(
                               'Sep, Wed 20 . 10:00 am - 10:30 am',
                               style: TextStyle(
-                                  color: Color(0xff515151),
+                                  color:AppColors.grey2,
                                   fontSize: 12.sp,
                                   fontWeight: FontWeight.w400),
                             )
@@ -121,7 +119,7 @@ class AppointmentStatus extends StatelessWidget {
                           children: [
                             CircleAvatar(
                               radius: 20.r,
-                              backgroundImage: AssetImage(
+                              backgroundImage: const AssetImage(
                                   'assets/homepageimages/Ellipse 190.png'),
                             ),
                             SizedBox(
@@ -145,7 +143,7 @@ class AppointmentStatus extends StatelessWidget {
                                 Text(
                                   'Psychologists | Apollo hospital',
                                   style: TextStyle(
-                                      color: Color(0xff7D8A95),
+                                      color:AppColors.grey5,
                                       fontSize: 12.sp,
                                       fontWeight: FontWeight.w400),
                                 ),
@@ -164,14 +162,14 @@ class AppointmentStatus extends StatelessWidget {
                   maxLines: 6,
                   decoration: InputDecoration(
                       hintText: 'Write your review here...',
-                      hintStyle: const TextStyle(color: Color(0xffB3AFAF)),
+                      hintStyle:  TextStyle(color:AppColors.grey9),
                       filled: true,
-                      fillColor: Colors.white,
+                      fillColor:AppColors.white,
                       border: const OutlineInputBorder(),
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10.r),
-                          borderSide: const BorderSide(
-                            color: Color(0xffFDE8E8),
+                          borderSide:  BorderSide(
+                            color: AppColors.white3,
                           ))),
                 ),
                 SizedBox(

@@ -40,13 +40,13 @@ class Notificationpage extends StatelessWidget {
                     style: TextStyle(
                         fontSize: 16.sp,
                         fontWeight: FontWeight.w400,
-                        color: const Color(0xff6B7280)),
+                        color:AppColors.grey3),
                   ),
                   const Spacer(),
                   Text(
                     'Mark all as read',
                     style: TextStyle(
-                        color: const Color(0xff1C2A3A),
+                        color:AppColors.blue5,
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w700),
                   ),
@@ -57,10 +57,10 @@ class Notificationpage extends StatelessWidget {
               height: 10.h,
             ),
             ListTile(
-              tileColor: Colors.white,
+              tileColor: AppColors.white,
               leading: CircleAvatar(
                 radius: 35.r,
-                backgroundColor: const Color(0xffDEF7E5),
+                backgroundColor:AppColors.white2,
                 child: Center(
                     child: SvgPicture.asset(
                         'assets/icons/sucessappointmenticon.svg')),
@@ -76,7 +76,7 @@ class Notificationpage extends StatelessWidget {
                   Text(
                     '1h',
                     style: TextStyle(
-                        color: const Color(0xff6B7280),
+                        color: AppColors.grey3,
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w400),
                   ),
@@ -87,14 +87,14 @@ class Notificationpage extends StatelessWidget {
                 style: TextStyle(
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w400,
-                    color: const Color(0xff6B7280)),
+                    color:AppColors.grey3),
               ),
             ),
             ListTile(
-              tileColor: Colors.white,
+              tileColor: AppColors.white,
               leading: CircleAvatar(
                 radius: 35.r,
-                backgroundColor: const Color(0xffFDE8E8),
+                backgroundColor:AppColors.white3,
                 child: Center(
                     child: SvgPicture.asset(
                         'assets/icons/cancelappointmenticon.svg')),
@@ -110,7 +110,7 @@ class Notificationpage extends StatelessWidget {
                   Text(
                     '2h',
                     style: TextStyle(
-                        color: const Color(0xff6B7280),
+                        color:AppColors.grey3,
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w400),
                   ),
@@ -121,14 +121,14 @@ class Notificationpage extends StatelessWidget {
                 style: TextStyle(
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w400,
-                    color: const Color(0xff6B7280)),
+                    color:AppColors.grey3),
               ),
             ),
             ListTile(
-              tileColor: Colors.white,
+              tileColor: AppColors.white,
               leading: CircleAvatar(
                 radius: 35.r,
-                backgroundColor: const Color(0xffF3F4F6),
+                backgroundColor:AppColors.iconbackground,
                 child: Center(
                     child: SvgPicture.asset(
                         'assets/icons/schedulechangeicon.svg')),
@@ -144,7 +144,7 @@ class Notificationpage extends StatelessWidget {
                   Text(
                     '8h',
                     style: TextStyle(
-                        color: const Color(0xff6B7280),
+                        color:AppColors.grey3,
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w400),
                   ),
@@ -155,7 +155,7 @@ class Notificationpage extends StatelessWidget {
                 style: TextStyle(
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w400,
-                    color: const Color(0xff6B7280)),
+                    color:AppColors.grey3),
               ),
             ),
             Padding(
@@ -167,13 +167,13 @@ class Notificationpage extends StatelessWidget {
                     style: TextStyle(
                         fontSize: 16.sp,
                         fontWeight: FontWeight.w400,
-                        color: const Color(0xff6B7280)),
+                        color:AppColors.grey3),
                   ),
                   const Spacer(),
                   Text(
                     'Mark all as read',
                     style: TextStyle(
-                        color: const Color(0xff1C2A3A),
+                        color: AppColors.blue5,
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w700),
                   ),
@@ -181,10 +181,10 @@ class Notificationpage extends StatelessWidget {
               ),
             ),
             ListTile(
-              tileColor: Colors.white,
+              tileColor:AppColors.white,
               leading: CircleAvatar(
                 radius: 35.r,
-                backgroundColor: const Color(0xffDEF7E5),
+                backgroundColor:AppColors.white2,
                 child: Center(
                     child: SvgPicture.asset(
                         'assets/icons/sucessappointmenticon.svg')),
@@ -200,7 +200,7 @@ class Notificationpage extends StatelessWidget {
                   Text(
                     '1d',
                     style: TextStyle(
-                        color: const Color(0xff6B7280),
+                        color:AppColors.grey3,
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w400),
                   ),
@@ -211,7 +211,7 @@ class Notificationpage extends StatelessWidget {
                 style: TextStyle(
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w400,
-                    color: const Color(0xff6B7280)),
+                    color:AppColors.grey3),
               ),
             ),
           ],

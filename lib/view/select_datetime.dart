@@ -70,11 +70,11 @@ class SelectDateAndTime extends StatelessWidget {
               Container(
                 padding: EdgeInsets.all(5.w),
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: AppColors.white,
                   borderRadius: BorderRadius.circular(10.r),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.1),
+                      color: AppColors.shadow1.withOpacity(0.1),
                       blurRadius: 8.r,
                       offset: const Offset(0, 4),
                     ),
@@ -121,11 +121,11 @@ class SelectDateAndTime extends StatelessWidget {
                       daysOfWeekStyle: DaysOfWeekStyle(
                         weekdayStyle: TextStyle(
                             fontWeight: FontWeight.w600,
-                            color: Color(0xff6A7683),
+                            color: AppColors.grey8,
                             fontSize: 12),
                         weekendStyle: TextStyle(
                             fontWeight: FontWeight.w600,
-                            color: Color(0xff6A7683),
+                            color: AppColors.grey8,
                             fontSize: 12.sp),
                       ),
                       calendarBuilders: CalendarBuilders(
@@ -136,8 +136,8 @@ class SelectDateAndTime extends StatelessWidget {
                               padding: EdgeInsets.all(4.w),
                               child: Container(
                                 decoration: BoxDecoration(
-                                  color: const Color(
-                                      0xffCDE1FF), // Highlight available date
+                                  color: AppColors
+                                      .white5, // Highlight available date
                                   borderRadius: BorderRadius.circular(
                                       5.r), // Rounded corners
                                 ),
@@ -186,11 +186,11 @@ class SelectDateAndTime extends StatelessWidget {
                               dateController.selectedTimeSlot.value ==
                                       timeSlots[index]
                                   ? AppColors.blue
-                                  : Colors.white,
+                                  : AppColors.white,
                           foregroundColor:
                               dateController.selectedTimeSlot.value ==
                                       timeSlots[index]
-                                  ? Colors.white
+                                  ? AppColors.white
                                   : AppColors.grey1,
                           side: BorderSide(color: AppColors.white),
                           shape: RoundedRectangleBorder(
@@ -204,8 +204,8 @@ class SelectDateAndTime extends StatelessWidget {
                             fontWeight: FontWeight.w600,
                             color: dateController.selectedTimeSlot.value ==
                                     timeSlots[index]
-                                ? Colors.white
-                                : const Color(0xff6B7280),
+                                ? AppColors.white
+                                : AppColors.grey3,
                           ),
                         ),
                       ));
@@ -248,7 +248,7 @@ class ScheduleAppointment extends StatelessWidget {
     return BackdropFilter(
       filter: ImageFilter.blur(sigmaX: 6, sigmaY: 6),
       child: Container(
-          color: const Color(0xff0B181F).withOpacity(0.1),
+          color: AppColors.blue6.withOpacity(0.1),
           child: Dialog(
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10.r),
@@ -257,7 +257,7 @@ class ScheduleAppointment extends StatelessWidget {
               width: 341.w,
               height: 400.h,
               decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: AppColors.white,
                   borderRadius: BorderRadius.circular(10.r)),
               padding: EdgeInsets.all(10.r),
               child: Center(
@@ -283,14 +283,14 @@ class ScheduleAppointment extends StatelessWidget {
                       style: TextStyle(
                           fontSize: 12.h,
                           fontWeight: FontWeight.w400,
-                          color: Color(0xff6B7280)),
+                          color: AppColors.grey3),
                     ),
                     Text(
                       'confirmed for June 25, 2024, at 10:00 am',
                       style: TextStyle(
                           fontSize: 12.h,
                           fontWeight: FontWeight.w400,
-                          color: Color(0xff6B7280)),
+                          color: AppColors.grey3),
                     ),
                     SizedBox(
                       height: 20.h,
@@ -311,7 +311,7 @@ class ScheduleAppointment extends StatelessWidget {
                         style: TextStyle(
                             fontSize: 12.sp,
                             fontWeight: FontWeight.w400,
-                            color: Color(0xff6B7280)),
+                            color: AppColors.grey3),
                       ),
                     ),
                   ],

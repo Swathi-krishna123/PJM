@@ -22,17 +22,17 @@ class UpComing extends StatelessWidget {
                 width: 342.w,
                 height: 247.h,
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color:AppColors.white,
                   borderRadius: BorderRadius.circular(12),
                   boxShadow: [
                     BoxShadow(
-                      color: Color(0x0D000000), // First shadow color
+                      color:AppColors.shadow1, // First shadow color
                       offset: Offset(0, 4), // Shadow position
                       blurRadius: 6.r, // Blur radius
                       spreadRadius: 0.r, // Spread radius
                     ),
                     BoxShadow(
-                      color: Color(0x1A000000), // Second shadow color
+                      color: AppColors.shadow, // Second shadow color
                       offset: Offset(0, 10), // Shadow position
                       blurRadius: 15.r, // Blur radius
                       spreadRadius: -3.r, // Negative spread radius
@@ -49,13 +49,13 @@ class UpComing extends StatelessWidget {
                         style: TextStyle(
                             fontSize: 14.sp,
                             fontWeight: FontWeight.w700,
-                            color: Color(0xff1F2A37)),
+                            color:AppColors.textcolor1),
                       ),
                       SizedBox(
                         height: 5.h,
                       ),
-                      const Divider(
-                        color: Color(0xffE5E7EB),
+                       Divider(
+                        color:AppColors.dividercolor,
                       ),
                       SizedBox(
                         height: 5.h,
@@ -66,7 +66,7 @@ class UpComing extends StatelessWidget {
                             height: 109.h,
                             width: 109.w,
                             decoration: BoxDecoration(
-                                color: Colors.grey,
+                                color:AppColors.grey,
                                 borderRadius: BorderRadius.circular(12.r),
                                 image: const DecorationImage(
                                     image: AssetImage(
@@ -83,7 +83,7 @@ class UpComing extends StatelessWidget {
                                   style: TextStyle(
                                       fontSize: 16.sp,
                                       fontWeight: FontWeight.w700,
-                                      color: Color(0xff200E32)),
+                                      color: AppColors.textcolor2),
                                 ),
                                 SizedBox(
                                   height: 5.h,
@@ -93,7 +93,7 @@ class UpComing extends StatelessWidget {
                                   style: TextStyle(
                                       fontSize: 14.sp,
                                       fontWeight: FontWeight.w600,
-                                      color: Color(0xff4B5563)),
+                                      color:AppColors.grey7),
                                 ),
                                 SizedBox(
                                   height: 5.h,
@@ -102,7 +102,7 @@ class UpComing extends StatelessWidget {
                                   children: [
                                     SvgPicture.asset(
                                       'assets/icons/locationicon.svg',
-                                      color: const Color(0xff4B5563),
+                                      color: AppColors.grey7,
                                       fit: BoxFit.cover,
                                       height: 14.h,
                                       width: 14.w,
@@ -115,7 +115,7 @@ class UpComing extends StatelessWidget {
                                       style: TextStyle(
                                           fontWeight: FontWeight.w400,
                                           fontSize: 14.sp,
-                                          color: Color(0xff4B5563)),
+                                          color:AppColors.grey7),
                                     )
                                   ],
                                 ),
@@ -127,8 +127,8 @@ class UpComing extends StatelessWidget {
                       SizedBox(
                         height: 5.h,
                       ),
-                      const Divider(
-                        color: Color(0xffE5E7EB),
+                       Divider(
+                        color:AppColors.dividercolor,
                       ),
                       SizedBox(
                         height: 5.h,
@@ -164,7 +164,7 @@ class UpComing extends StatelessWidget {
                               style: TextStyle(
                                   fontWeight: FontWeight.w700,
                                   fontSize: 14.sp,
-                                  color: Colors.white),
+                                  color: AppColors.white),
                             )),
                           ),
                         ],

@@ -35,8 +35,8 @@ class AppointmentPage extends StatelessWidget {
           bottom: TabBar(
             tabAlignment: TabAlignment.center,
             isScrollable: true, // Makes the TabBar scrollable
-            unselectedLabelColor: const Color(0xff9CA3AF),
-            labelColor: const Color(0xff200E32),
+            unselectedLabelColor:AppColors.grey1,
+            labelColor: AppColors.textcolor2,
             indicator: const BoxDecoration(), // Removes the indicator
             splashFactory: NoSplash.splashFactory, // Removes splash effect
             tabs: <Widget>[

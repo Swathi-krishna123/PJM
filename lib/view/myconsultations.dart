@@ -46,17 +46,17 @@ class MyConsultations extends StatelessWidget {
                   decoration: BoxDecoration(
                     boxShadow: [
                       BoxShadow(
-                        color: const Color(0x1A000000), // Shadow color
-                        offset:
-                            const Offset(0, 10), // Horizontal and vertical offsets
+                        color: AppColors.shadow, // Shadow color
+                        offset: const Offset(
+                            0, 10), // Horizontal and vertical offsets
                         blurRadius: 15.r, // Blur radius
                         spreadRadius: -3.r, // Spread radius
                       ),
                     ],
-                    color: Colors.white,
+                    color: AppColors.white,
                     borderRadius: BorderRadius.circular(10.r),
                     border: Border.all(
-                      color: const Color(0xffFFD5C4), // Border color
+                      color: AppColors.bordercolor, // Border color
                       width: 1.w, // Border width
                     ),
                   ),
@@ -65,7 +65,7 @@ class MyConsultations extends StatelessWidget {
                     children: [
                       Container(
                         height: 35.h,
-                        color: const Color(0xffFFD5C4),
+                        color: AppColors.bordercolor,
                         child: const Center(
                           child: Text('Token no: 25'),
                         ),
@@ -90,9 +90,7 @@ class MyConsultations extends StatelessWidget {
                           children: [
                             SvgPicture.asset(
                               'assets/icons/clockicon.svg',
-                              color: const Color(
-                                0xff363636,
-                              ),
+                              color: AppColors.grey4,
                               height: 16.67.h,
                               width: 16.67.w,
                             ),
@@ -102,7 +100,7 @@ class MyConsultations extends StatelessWidget {
                             Text(
                               'Sep, Wed 20 . 10:00 am - 10:30 am',
                               style: TextStyle(
-                                  color: const Color(0xff515151),
+                                  color: AppColors.grey2,
                                   fontSize: 12.sp,
                                   fontWeight: FontWeight.w400),
                             )
@@ -142,7 +140,7 @@ class MyConsultations extends StatelessWidget {
                                 Text(
                                   'Psychologists | Apollo hospital',
                                   style: TextStyle(
-                                      color: const Color(0xff7D8A95),
+                                      color: AppColors.grey5,
                                       fontSize: 12.sp,
                                       fontWeight: FontWeight.w400),
                                 ),
@@ -175,7 +173,7 @@ class MyConsultations extends StatelessWidget {
                     '154/11, Bannerghatta Road Opp, Bangalore - 560 076',
                     style: TextStyle(
                         fontSize: 12.sp,
-                        color: const Color(0xff283343),
+                        color: AppColors.textcolor,
                         fontWeight: FontWeight.w300),
                   )
                 ],
@@ -187,7 +185,7 @@ class MyConsultations extends StatelessWidget {
                 height: 200.h,
                 width: 326.w,
                 decoration: BoxDecoration(
-                    color: Colors.grey,
+                    color: AppColors.grey,
                     borderRadius: BorderRadius.circular(10.r)),
               ),
               SizedBox(
@@ -197,7 +195,6 @@ class MyConsultations extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   GestureDetector(
-                    
                     child: Container(
                       height: 35.h,
                       width: 150.w,
@@ -211,7 +208,7 @@ class MyConsultations extends StatelessWidget {
                         style: TextStyle(
                             fontWeight: FontWeight.w400,
                             fontSize: 12.sp,
-                            color: Colors.white),
+                            color: AppColors.white),
                       )),
                     ),
                   ),
@@ -246,7 +243,7 @@ class MyConsultations extends StatelessWidget {
                 'If you can’t make it, please cancel or reschedule.',
                 style: TextStyle(
                     fontSize: 12.sp,
-                    color: const Color(0xff283343),
+                    color: AppColors.textcolor,
                     fontWeight: FontWeight.w300),
               ),
               SizedBox(
@@ -258,7 +255,7 @@ class MyConsultations extends StatelessWidget {
                     'assets/icons/reschedule.svg',
                     height: 24.h,
                     width: 24.w,
-                    color: const Color(0xff200E32),
+                    color: AppColors.textcolor2,
                   ),
                   SizedBox(
                     width: 10.w,
@@ -266,7 +263,7 @@ class MyConsultations extends StatelessWidget {
                   Text(
                     'Reschedule',
                     style: TextStyle(
-                        color: const Color(0xff200E32),
+                        color: AppColors.textcolor2,
                         fontSize: 16.sp,
                         fontWeight: FontWeight.w600),
                   )
@@ -281,7 +278,7 @@ class MyConsultations extends StatelessWidget {
                     'assets/icons/cancel.svg',
                     height: 24.h,
                     width: 24.w,
-                    color: const Color(0xff200E32),
+                    color: AppColors.textcolor2,
                   ),
                   SizedBox(
                     width: 10.w,
@@ -289,7 +286,7 @@ class MyConsultations extends StatelessWidget {
                   Text(
                     'Cancel',
                     style: TextStyle(
-                        color: const Color(0xff200E32),
+                        color: AppColors.textcolor2,
                         fontSize: 16.sp,
                         fontWeight: FontWeight.w600),
                   )

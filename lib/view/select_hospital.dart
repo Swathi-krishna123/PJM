@@ -2,6 +2,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:patient_journey_management/constants/colors.dart';
 import 'package:patient_journey_management/utilities/custom_widgets/button.dart';
 import '../controller/hospitalController.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
@@ -18,7 +19,7 @@ class SelectHospital extends StatelessWidget {
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 6, sigmaY: 6),
         child: Container(
-          color: const Color(0xff0B181F).withOpacity(0.1),
+          color: AppColors.blue6.withOpacity(0.1),
           child: Dialog(
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
@@ -27,7 +28,7 @@ class SelectHospital extends StatelessWidget {
               width: 326.w,
               height: 310.h,
               decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: AppColors.white,
                   borderRadius: BorderRadius.circular(10.r)),
               padding: EdgeInsets.all(10.w),
               child: Column(
@@ -47,9 +48,9 @@ class SelectHospital extends StatelessWidget {
                     return Container(
                       width: double.infinity,
                       decoration: BoxDecoration(
-                        color: const Color(0xffE3F6FF),
+                        color: AppColors.white4,
                         borderRadius: BorderRadius.circular(4.r),
-                        border: Border.all(color: const Color(0xff909090)),
+                        border: Border.all(color: AppColors.grey),
                       ),
                       child: DropdownButtonHideUnderline(
                         child: DropdownButton2<String>(
@@ -89,7 +90,7 @@ class SelectHospital extends StatelessWidget {
                           ),
                           dropdownStyleData: DropdownStyleData(
                             decoration: BoxDecoration(
-                              color: Colors.white,
+                              color: AppColors.white,
                               borderRadius: BorderRadius.circular(4.r),
                             ),
                             maxHeight: 275.h,
@@ -139,9 +140,9 @@ class SelectHospital extends StatelessWidget {
                   Obx(() => Container(
                         width: double.infinity,
                         decoration: BoxDecoration(
-                          color: Color(0xffE3F6FF),
+                          color: AppColors.white4,
                           borderRadius: BorderRadius.circular(4.r),
-                          border: Border.all(color: const Color(0xff909090)),
+                          border: Border.all(color: AppColors.grey),
                         ),
                         child: DropdownButtonHideUnderline(
                           child: DropdownButton2<String>(
@@ -180,7 +181,7 @@ class SelectHospital extends StatelessWidget {
                             ),
                             dropdownStyleData: DropdownStyleData(
                               decoration: BoxDecoration(
-                                color: Colors.white,
+                                color: AppColors.white,
                                 borderRadius: BorderRadius.circular(4.r),
                               ),
                               maxHeight: 275.h,
@@ -194,9 +195,9 @@ class SelectHospital extends StatelessWidget {
                   Obx(() => Container(
                         width: double.infinity,
                         decoration: BoxDecoration(
-                          color: const Color(0xffE3F6FF),
+                          color: AppColors.white4,
                           borderRadius: BorderRadius.circular(4),
-                          border: Border.all(color: const Color(0xff909090)),
+                          border: Border.all(color: AppColors.grey),
                         ),
                         child: DropdownButtonHideUnderline(
                           child: DropdownButton2<String>(
@@ -235,7 +236,7 @@ class SelectHospital extends StatelessWidget {
                             ),
                             dropdownStyleData: DropdownStyleData(
                               decoration: BoxDecoration(
-                                color: Colors.white,
+                                color: AppColors.white,
                                 borderRadius: BorderRadius.circular(4.r),
                               ),
                               maxHeight: 275.h,

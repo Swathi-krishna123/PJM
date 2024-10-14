@@ -45,7 +45,7 @@ class DrInfo extends StatelessWidget {
                     width: 326.w,
                     height: 400.h,
                     decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: AppColors.white,
                         borderRadius: BorderRadius.circular(10.r)),
                     padding:
                         EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
@@ -53,7 +53,7 @@ class DrInfo extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Divider(
-                          color: Color(0xffDFDFDF),
+                          color: AppColors.dividercolor1,
                           indent: 110.w,
                           endIndent: 110.w,
                           thickness: 3,
@@ -76,12 +76,12 @@ class DrInfo extends StatelessWidget {
                               style: TextStyle(
                                   fontSize: 14.sp,
                                   fontWeight: FontWeight.w600,
-                                  color: Color(0xff7D8A95)),
+                                  color: AppColors.grey5),
                             ),
                             Icon(
                               Icons.star,
                               size: 17.sp,
-                              color: Color(0xffEED600),
+                              color: AppColors.yellow,
                             )
                           ],
                         ),
@@ -91,9 +91,7 @@ class DrInfo extends StatelessWidget {
                         Text(
                           'Psychologists ',
                           style: TextStyle(
-                              color: Color(
-                                0xff7D8A95,
-                              ),
+                              color: AppColors.grey5,
                               fontSize: 16.sp,
                               fontWeight: FontWeight.w400),
                         ),
@@ -102,9 +100,7 @@ class DrInfo extends StatelessWidget {
                             Text(
                               'Apollo hospital at 3rd Floor',
                               style: TextStyle(
-                                  color: Color(
-                                    0xff7D8A95,
-                                  ),
+                                  color: AppColors.grey5,
                                   fontSize: 16.sp,
                                   fontWeight: FontWeight.w400),
                             ),
@@ -122,23 +118,15 @@ class DrInfo extends StatelessWidget {
                         ),
                         Row(
                           children: [
-                            SvgPicture.asset(
-                              'assets/icons/clockicon.svg',
-                              height: 18,
-                              width: 18,
-                              color: const Color(
-                                0xff7D8A95,
-                              ),
-                            ),
+                            SvgPicture.asset('assets/icons/clockicon.svg',
+                                height: 18, width: 18, color: AppColors.grey5),
                             SizedBox(
                               width: 5.w,
                             ),
                             Text(
                               '10:30am - 5:30pm',
                               style: TextStyle(
-                                  color: Color(
-                                    0xff7D8A95,
-                                  ),
+                                  color: AppColors.grey5,
                                   fontSize: 14.sp,
                                   fontWeight: FontWeight.w400),
                             )
@@ -147,8 +135,8 @@ class DrInfo extends StatelessWidget {
                         SizedBox(
                           height: 15.h,
                         ),
-                        const Divider(
-                          color: Color(0xffDFDFDF),
+                        Divider(
+                          color: AppColors.dividercolor1,
                         ),
                         SizedBox(
                           height: 15.h,
@@ -171,7 +159,7 @@ class DrInfo extends StatelessWidget {
                                 Text(
                                   'Experience',
                                   style: TextStyle(
-                                      color: Color(0xff7D8A95),
+                                      color: AppColors.grey5,
                                       fontSize: 16.sp,
                                       fontWeight: FontWeight.w400),
                                 )
@@ -192,7 +180,7 @@ class DrInfo extends StatelessWidget {
                                 Text(
                                   'Treated',
                                   style: TextStyle(
-                                      color: Color(0xff7D8A95),
+                                      color: AppColors.grey5,
                                       fontSize: 16.sp,
                                       fontWeight: FontWeight.w400),
                                 )
@@ -213,7 +201,7 @@ class DrInfo extends StatelessWidget {
                                 Text(
                                   'Hourly Rate',
                                   style: TextStyle(
-                                      color: Color(0xff7D8A95),
+                                      color: AppColors.grey5,
                                       fontSize: 16.sp,
                                       fontWeight: FontWeight.w400),
                                 )
@@ -238,13 +226,13 @@ class DrInfo extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Container2(
-                      color: const Color(0xffE52516),
+                      color: AppColors.red,
                       text1: 'Waiting Time:',
                       text2: '15 mins',
                       text3: '',
                     ),
                     Container2(
-                      color: Color(0xff12A817),
+                      color: AppColors.green,
                       text1: 'Status:',
                       text2: 'You’re currently',
                       text3: '3rd line',
@@ -290,7 +278,7 @@ class Container2 extends StatelessWidget {
             Text(
               text1,
               style: TextStyle(
-                  color: Colors.white,
+                  color: AppColors.white,
                   fontWeight: FontWeight.w700,
                   fontSize: 15.sp),
             ),
@@ -300,14 +288,14 @@ class Container2 extends StatelessWidget {
             Text(
               text2,
               style: TextStyle(
-                  color: Colors.white,
+                  color: AppColors.white,
                   fontWeight: FontWeight.w700,
                   fontSize: 15.sp),
             ),
             Text(
               text3!,
               style: TextStyle(
-                  color: Colors.white,
+                  color: AppColors.white,
                   fontWeight: FontWeight.w700,
                   fontSize: 15.sp),
             )

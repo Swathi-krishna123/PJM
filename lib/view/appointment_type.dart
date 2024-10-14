@@ -48,7 +48,7 @@ class AppointmentType extends StatelessWidget {
                   );
                 },
                 child: ContainerCustom(
-                  color: const Color(0xffDEC4FF),
+                  color:AppColors.grey6,
                   heading: 'Hospital',
                   text: 'Your journey to recovery starts here.',
                   path: 'assets/icons/hospitalicon.svg',
@@ -61,7 +61,7 @@ class AppointmentType extends StatelessWidget {
                   heading: 'Clinic',
                   text: 'Your health is our priority—let’s check in!',
                   path: 'assets/icons/clinicicon.svg',
-                  color: const Color(0xffFFF48E)),
+                  color:AppColors.yellowshade),
                SizedBox(
                 height: 10.h,
               ),
@@ -69,7 +69,7 @@ class AppointmentType extends StatelessWidget {
                   heading: 'Specialist',
                   text: 'Expert insights for your specific health needs.',
                   path: 'assets/icons/speacialisticon.svg',
-                  color: const Color(0xffFFABA5))
+                  color:AppColors.redshade)
             ],
           ),
         ),
@@ -112,7 +112,7 @@ class ContainerCustom extends StatelessWidget {
           children: [
             CircleAvatar(
               radius: 25.r,
-              backgroundColor: Colors.white,
+              backgroundColor: AppColors.white,
               child: Center(
                   child: SvgPicture.asset(
                 path,
@@ -126,7 +126,7 @@ class ContainerCustom extends StatelessWidget {
             Text(
               heading,
               style:  TextStyle(
-                  color: Color(0xff283343),
+                  color: AppColors.textcolor,
                   fontSize: 18.sp,
                   fontWeight: FontWeight.w400),
             ),
@@ -136,7 +136,7 @@ class ContainerCustom extends StatelessWidget {
             Text(
               text,
               style:  TextStyle(
-                  color: Color(0xff283343),
+                  color: AppColors.textcolor,
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w300),
             )

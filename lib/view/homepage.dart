@@ -32,13 +32,14 @@ class HomePage extends StatelessWidget {
         // backgroundColor: AppColors.background,
         appBar: AppBar(
           automaticallyImplyLeading: false,
-          leadingWidth: 1.sw,
-          toolbarHeight: 70.h,
-          surfaceTintColor: Colors.white,
+          leadingWidth: 1.w,
+          toolbarHeight: 75.h,
+          
           actions: [
              Padding(
-              padding: EdgeInsets.only(left: 20.w),
-              child: Row(
+              padding: EdgeInsets.only(left: 20.w,top: 10.h),
+              child: Row(mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   CircleAvatar(
                     radius: 25.r,
@@ -47,22 +48,23 @@ class HomePage extends StatelessWidget {
                   ),
                   SizedBox(width: 10.w),
                   Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         CircleAvatar(
-                          backgroundColor: const Color(0xffE1E7EE),
+                          backgroundColor:AppColors.white1,
                           radius: 20.r,
                           child: Center(
                             child: Icon(
                               Icons.add,
-                              color: const Color(0xff336EBD),
+                              color:AppColors.blue2,
                               size: 15.sp,
                             ),
                           ),
                         ),
-                        const Text(
+                         Text(
                           'Add Member',
-                          style: TextStyle(color: Colors.blue),
+                          style: TextStyle(color: AppColors.blue3),
                         )
                       ]),
                 ],
@@ -77,12 +79,12 @@ class HomePage extends StatelessWidget {
                     'Kochi  ',
                     style: TextStyle(
                       fontSize: 14.sp,
-                      color: const Color(0xff515151),
+                      color:AppColors.grey2 ,
                     ),
                   ),
                   SvgPicture.asset(
                     'assets/icons/arrowdown.svg',
-                    color: const Color(0xff515151),
+                    color:AppColors.grey2,
                     height: 6.h,
                   ),
                 ],
@@ -100,11 +102,11 @@ class HomePage extends StatelessWidget {
                   height: 48.h,
                   width: 326.w,
                   child: TextFormField(
-                    cursorColor: const Color(0xff515151),
+                    cursorColor:AppColors.grey2,
                     decoration: InputDecoration(
                       contentPadding:  EdgeInsets.symmetric(vertical:25.h),
-                      focusedBorder: const OutlineInputBorder(
-                        borderSide: BorderSide(color: Color(0xffCCCCCC)),
+                      focusedBorder:  OutlineInputBorder(
+                        borderSide: BorderSide(color:AppColors.offwhite),
                       ),
                       border: const OutlineInputBorder(),
                       hintText:
@@ -113,18 +115,18 @@ class HomePage extends StatelessWidget {
                         padding:  EdgeInsets.all(15.w),
                         child: SvgPicture.asset(
                           'assets/icons/searchicon.svg',
-                          color: const Color(0xff909090),
+                          color:AppColors.grey,
                           height: 16.67.h,
                           width: 16.67.w,
                         ),
                       ),
                       hintStyle:  TextStyle(
-                        color: const Color(0xff909090),
+                        color:AppColors.grey,
                         fontSize: 12.sp,
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderSide:  BorderSide(
-                          color: const Color(0xffCCCCCC),
+                          color:AppColors.offwhite,
                           width: 1.w,
                         ),
                         borderRadius: BorderRadius.circular(8.r),
@@ -161,7 +163,7 @@ class HomePage extends StatelessWidget {
                                   Text(
                                     items[index]['text'],
                                     style:  TextStyle(
-                                      color: Colors.white,
+                                      color:AppColors.white,
                                       fontSize: 15.sp,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -171,7 +173,7 @@ class HomePage extends StatelessWidget {
                                   Text(
                                     items[index]['text2'],
                                     style:  TextStyle(
-                                      color: Colors.white,
+                                      color:AppColors.white,
                                       fontSize: 15.sp,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -190,7 +192,7 @@ class HomePage extends StatelessWidget {
                                 icon: SvgPicture.asset(
                                   'assets/icons/arrowicon.svg',
                                   height: 24.h,
-                                  color: Colors.white,
+                                  color: AppColors.white,
                                 ),
                               ),
                             ),
@@ -210,7 +212,7 @@ class HomePage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(15.r),
                     boxShadow:  [
                       BoxShadow(
-                        color: const Color(0x1A000000), // Shadow color
+                        color:AppColors.shadow, // Shadow color
                         offset:
                             Offset(0.w, 10.h), // Horizontal and vertical offsets
                         blurRadius: 15.r, // Blur radius
@@ -233,7 +235,7 @@ class HomePage extends StatelessWidget {
                                 Container(
                                   width: 200.w,
                                   decoration: BoxDecoration(
-                                      color: Colors.white,
+                                      color:AppColors.white,
                                       borderRadius: BorderRadius.circular(8.r)),
                                   child: Column(
                                     crossAxisAlignment:
@@ -267,7 +269,7 @@ class HomePage extends StatelessWidget {
                                           children: [
                                             SvgPicture.asset(
                                               'assets/icons/locationicon.svg',
-                                              color: const Color(0xff6B7280),
+                                              color:AppColors.grey3,
                                               fit: BoxFit.cover,
                                               height: 14.h,
                                               width: 14.w,
@@ -279,7 +281,7 @@ class HomePage extends StatelessWidget {
                                               '123 Oak Street, CA 98765',
                                               style: TextStyle(
                                                   fontSize: 12.sp,
-                                                  color: const Color(0xff6B7280)),
+                                                  color:AppColors.grey3),
                                             )
                                           ],
                                         ),
@@ -292,7 +294,7 @@ class HomePage extends StatelessWidget {
                                              Text(
                                               '5.0',
                                               style: TextStyle(
-                                                  color: const Color(0xff6B7280),
+                                                  color:AppColors.grey3,
                                                   fontWeight: FontWeight.w700,
                                                   fontSize: 12.sp),
                                             ),
@@ -310,7 +312,7 @@ class HomePage extends StatelessWidget {
                                              Text(
                                               '(128 Reviews)',
                                               style: TextStyle(
-                                                  color: const Color(0xff6B7280),
+                                                  color:AppColors.grey3,
                                                   fontSize: 12.sp,
                                                   fontWeight: FontWeight.w400),
                                             )
@@ -318,7 +320,7 @@ class HomePage extends StatelessWidget {
                                         ),
                                       ),
                                        Divider(
-                                        color: const Color(0xffE5E7EB),
+                                        color:AppColors.dividercolor ,
                                         indent: 15.w,
                                         endIndent: 15.w,
                                       ),
@@ -331,7 +333,7 @@ class HomePage extends StatelessWidget {
                                               'assets/icons/kmicon.svg',
                                               height: 16.h,
                                               width: 16.w,
-                                              color: const Color(0xff9CA3AF),
+                                              color:AppColors.grey1,
                                             ),
                                              SizedBox(
                                               width: 10.w,
@@ -341,7 +343,7 @@ class HomePage extends StatelessWidget {
                                               style: TextStyle(
                                                   fontWeight: FontWeight.w400,
                                                   fontSize: 12.sp,
-                                                  color: const Color(0xff6B7280)),
+                                                  color:AppColors.grey3),
                                             )
                                           ],
                                         ),
@@ -380,17 +382,17 @@ class HomePage extends StatelessWidget {
                   decoration: BoxDecoration(
                     boxShadow:  [
                       BoxShadow(
-                        color: const Color(0x1A000000), // Shadow color
+                        color:AppColors.shadow, // Shadow color
                         offset:
                             const Offset(0, 10), // Horizontal and vertical offsets
                         blurRadius: 15..r, // Blur radius
                         spreadRadius: -3.r, // Spread radius
                       ),
                     ],
-                    color: Colors.white,
+                    color:AppColors.white,
                     borderRadius: BorderRadius.circular(10.r),
                     border: Border.all(
-                      color: const Color(0xff4987FF)
+                      color:AppColors.blue4
                           .withOpacity(0.25), // Border color
                       width: 1.w, // Border width
                     ),
@@ -419,9 +421,7 @@ class HomePage extends StatelessWidget {
                           children: [
                             SvgPicture.asset(
                               'assets/icons/clockicon.svg',
-                              color: const Color(
-                                0xff363636,
-                              ),
+                              color:AppColors.grey4,
                               height: 16.67.h,
                               width: 16.67.h,
                             ),
@@ -431,7 +431,7 @@ class HomePage extends StatelessWidget {
                              Text(
                               'Sep, Wed 20 . 10:00 am - 10:30 am',
                               style: TextStyle(
-                                  color: const Color(0xff515151),
+                                  color:AppColors.grey2,
                                   fontSize: 12.sp,
                                   fontWeight: FontWeight.w400),
                             )
@@ -468,7 +468,7 @@ class HomePage extends StatelessWidget {
                                  Text(
                                   'Psychologists | Apollo hospital',
                                   style: TextStyle(
-                                      color: const Color(0xff7D8A95),
+                                      color:AppColors.grey5,
                                       fontSize: 12.sp,
                                       fontWeight: FontWeight.w400),
                                 ),
@@ -558,14 +558,14 @@ class Container3 extends StatelessWidget {
               Text(
                 text1,
                 style:  TextStyle(
-                    color: const Color(0xffFFFFFF),
+                    color:AppColors.white,
                     fontSize: 15.sp,
                     fontWeight: FontWeight.w700),
               ),
               Text(
                 text2,
                 style:  TextStyle(
-                    color: const Color(0xffFFFFFF),
+                    color:AppColors.white,
                     fontSize: 15.sp,
                     fontWeight: FontWeight.w700),
               ),
@@ -577,7 +577,7 @@ class Container3 extends StatelessWidget {
             top: 20.h,
             child: SvgPicture.asset(
               'assets/icons/arrowicon.svg',
-              color: Colors.white,
+              color:AppColors.white,
               height: 24.h,
               width: 24.w,
             ))
@@ -598,16 +598,16 @@ class ContainerDr extends StatelessWidget {
       decoration: BoxDecoration(
         boxShadow:  [
           BoxShadow(
-            color: const Color(0x1A000000), // Shadow color
+            color: AppColors.shadow, // Shadow color
             offset: const Offset(0, 10), // Horizontal and vertical offsets
             blurRadius: 15.r, // Blur radius
             spreadRadius: -3.r, // Spread radius
           ),
         ],
-        color: Colors.white,
+        color:AppColors.white,
         borderRadius: BorderRadius.circular(10.r),
         border: Border.all(
-          color: const Color(0xff4987FF).withOpacity(0.25), // Border color
+          color: AppColors.blue4.withOpacity(0.25), // Border color
           width: 1.w, // Border width
         ),
       ),
@@ -640,7 +640,7 @@ class ContainerDr extends StatelessWidget {
                  Text(
                   'Psychologists | Apollo hospital',
                   style: TextStyle(
-                      color: const Color(0xff7D8A95),
+                      color:AppColors.grey5,
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w400),
                 ),
