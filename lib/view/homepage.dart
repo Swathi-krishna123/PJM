@@ -63,6 +63,9 @@ class HomePage extends StatelessWidget {
                             ),
                           ),
                         ),
+                        const SizedBox(
+                          height: 5,
+                        ),
                         Text(
                           'Add Member',
                           style: TextStyle(color: AppColors.blue3),
@@ -91,9 +94,7 @@ class HomePage extends StatelessWidget {
             //     ],
             //   ),
             // )
-           SizedBox(
-            width: 150.w,
-            child: const SelectPlace())
+            SizedBox(width: 155.w, child: const SelectPlace())
           ],
         ),
         body: SingleChildScrollView(
@@ -243,7 +244,7 @@ class HomePage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  constraints: BoxConstraints(maxHeight: 256.h),
+                  constraints: BoxConstraints(maxHeight: 270.h),
                   child: ListView.builder(
                     shrinkWrap: true,
                     scrollDirection: Axis.horizontal,
@@ -399,7 +400,7 @@ class HomePage extends StatelessWidget {
                   height: 10.h,
                 ),
                 Container(
-                  height: 220.h,
+                  height: 250.h,
                   width: 326.w,
                   decoration: BoxDecoration(
                     boxShadow: [
@@ -538,7 +539,10 @@ class HomePage extends StatelessWidget {
                     child: Container3(
                         text1: 'US',
                         text2: 'InPatient',
-                        path: 'assets/homepageimages/Frame 1000001457.png'))
+                        path: 'assets/homepageimages/Frame 1000001457.png')),
+                const SizedBox(
+                  height: 20,
+                ),
               ],
             ),
           ),

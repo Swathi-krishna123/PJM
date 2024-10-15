@@ -13,11 +13,11 @@ class Splash2 extends StatelessWidget {
         children: [
           const Spacer(),
           Padding(
-            padding: EdgeInsets.all(15.w), // Use .w for responsive padding
+            padding: EdgeInsets.symmetric(horizontal: 15), // Use .w for responsive padding
             child: Image.asset(
               'assets/splash_images/splash.png',
               height: 370.h, // Example of responsive height
-              width: 370.w,  // Example of responsive width
+              // width: 370.w,  // Example of responsive width
             ),
           ),
           Column(
