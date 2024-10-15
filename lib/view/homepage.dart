@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:patient_journey_management/constants/colors.dart';
 import 'package:patient_journey_management/utilities/custom_widgets/button.dart';
+import 'package:patient_journey_management/view/select_place.dart';
 
 import '../utilities/custom_widgets/headings.dart';
 
@@ -34,12 +35,12 @@ class HomePage extends StatelessWidget {
           automaticallyImplyLeading: false,
           leadingWidth: 1.w,
           toolbarHeight: 75.h,
-          
           actions: [
-             Padding(
-              padding: EdgeInsets.only(left: 20.w,top: 10.h),
-              child: Row(mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
+            Padding(
+              padding: EdgeInsets.only(left: 20.w, top: 10.h),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   CircleAvatar(
                     radius: 25.r,
@@ -52,17 +53,17 @@ class HomePage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         CircleAvatar(
-                          backgroundColor:AppColors.white1,
+                          backgroundColor: AppColors.white1,
                           radius: 20.r,
                           child: Center(
                             child: Icon(
                               Icons.add,
-                              color:AppColors.blue2,
+                              color: AppColors.blue2,
                               size: 15.sp,
                             ),
                           ),
                         ),
-                         Text(
+                        Text(
                           'Add Member',
                           style: TextStyle(color: AppColors.blue3),
                         )
@@ -71,72 +72,78 @@ class HomePage extends StatelessWidget {
               ),
             ),
             const Spacer(),
-            Padding(
-              padding: EdgeInsets.only(right: 20.w),
-              child: Row(
-                children: [
-                  Text(
-                    'Kochi  ',
-                    style: TextStyle(
-                      fontSize: 14.sp,
-                      color:AppColors.grey2 ,
-                    ),
-                  ),
-                  SvgPicture.asset(
-                    'assets/icons/arrowdown.svg',
-                    color:AppColors.grey2,
-                    height: 6.h,
-                  ),
-                ],
-              ),
-            )
+            // Padding(
+            //   padding: EdgeInsets.only(right: 20.w),
+            //   child: Row(
+            //     children: [
+            //       Text(
+            //         'Kochi  ',
+            //         style: TextStyle(
+            //           fontSize: 14.sp,
+            //           color: AppColors.grey2,
+            //         ),
+            //       ),
+            //       SvgPicture.asset(
+            //         'assets/icons/arrowdown.svg',
+            //         color: AppColors.grey2,
+            //         height: 6.h,
+            //       ),
+            //     ],
+            //   ),
+            // )
+           SizedBox(
+            width: 150.w,
+            child: const SelectPlace())
           ],
         ),
         body: SingleChildScrollView(
           child: Padding(
-            padding:  EdgeInsets.only(left: 15.w, top: 20.h),
+            padding: EdgeInsets.only(left: 15.w, top: 20.h),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
                   height: 48.h,
-                  width: 326.w,
-                  child: TextFormField(
-                    cursorColor:AppColors.grey2,
-                    decoration: InputDecoration(
-                      contentPadding:  EdgeInsets.symmetric(vertical:25.h),
-                      focusedBorder:  OutlineInputBorder(
-                        borderSide: BorderSide(color:AppColors.offwhite),
-                      ),
-                      border: const OutlineInputBorder(),
-                      hintText:
-                          'Search by Specialist/Category/Condition/Hospital',
-                      prefixIcon: Padding(
-                        padding:  EdgeInsets.all(15.w),
-                        child: SvgPicture.asset(
-                          'assets/icons/searchicon.svg',
-                          color:AppColors.grey,
-                          height: 16.67.h,
-                          width: 16.67.w,
+                  // width: 326.w,
+                  child: Padding(
+                    padding: EdgeInsets.only(right: 15.w),
+                    child: TextFormField(
+                      cursorColor: AppColors.grey2,
+                      decoration: InputDecoration(
+                        contentPadding: EdgeInsets.symmetric(vertical: 25.h),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: AppColors.offwhite),
                         ),
-                      ),
-                      hintStyle:  TextStyle(
-                        color:AppColors.grey,
-                        fontSize: 12.sp,
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide:  BorderSide(
-                          color:AppColors.offwhite,
-                          width: 1.w,
+                        border: const OutlineInputBorder(),
+                        hintText:
+                            'Search by Specialist/Category/Condition/Hospital',
+                        prefixIcon: Padding(
+                          padding: EdgeInsets.all(15.w),
+                          child: SvgPicture.asset(
+                            'assets/icons/searchicon.svg',
+                            color: AppColors.grey,
+                            height: 16.67.h,
+                            width: 16.67.w,
+                          ),
                         ),
-                        borderRadius: BorderRadius.circular(8.r),
+                        hintStyle: TextStyle(
+                          color: AppColors.grey,
+                          fontSize: 12.sp,
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: AppColors.offwhite,
+                            width: 1.w,
+                          ),
+                          borderRadius: BorderRadius.circular(8.r),
+                        ),
                       ),
                     ),
                   ),
                 ),
                 GridView.builder(
                   shrinkWrap: true,
-                  padding:  EdgeInsets.symmetric(vertical: 10.h),
+                  padding: EdgeInsets.symmetric(vertical: 10.h),
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                     childAspectRatio: 1,
@@ -145,54 +152,70 @@ class HomePage extends StatelessWidget {
                     return GestureDetector(
                       onTap: () => Get.toNamed(items[index]['route']),
                       child: ClipRRect(
-                        borderRadius: BorderRadius.circular(10.r),
+                        borderRadius: BorderRadius.circular(
+                            10.r), // Responsive corner radius
                         child: Stack(
                           children: [
+                            // Image that fills the container
                             Image.asset(
                               items[index]['image'],
                               fit: BoxFit.cover,
-                              width: double.infinity,
-                              height: double.infinity,
+                              width: double
+                                  .infinity, // Ensures it covers the container width
+                              height: double
+                                  .infinity, // Ensures it covers the container height
                             ),
-                            Positioned(
-                              right: 20.w,
-                              top: 30.h,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.end,
-                                children: [
-                                  Text(
-                                    items[index]['text'],
-                                    style:  TextStyle(
-                                      color:AppColors.white,
-                                      fontSize: 15.sp,
-                                      fontWeight: FontWeight.bold,
+                            // Text placed inside the container using Padding to ensure it's always inside
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 20.w, vertical: 30.h),
+                              child: Align(
+                                alignment: Alignment.topRight,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    // Text with responsive size but contained within padding
+                                    Text(
+                                      items[index]['text'],
+                                      style: TextStyle(
+                                        color: AppColors.white,
+                                        fontSize: 15.sp, // Responsive font size
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                      overflow: TextOverflow.ellipsis,
+                                      maxLines: 1,
                                     ),
-                                    overflow: TextOverflow.ellipsis,
-                                    maxLines: 1,
-                                  ),
-                                  Text(
-                                    items[index]['text2'],
-                                    style:  TextStyle(
-                                      color:AppColors.white,
-                                      fontSize: 15.sp,
-                                      fontWeight: FontWeight.bold,
+                                    SizedBox(
+                                        height:
+                                            5.h), // Adds spacing between texts
+                                    Text(
+                                      items[index]['text2'],
+                                      style: TextStyle(
+                                        color: AppColors.white,
+                                        fontSize: 15.sp, // Responsive font size
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                      overflow: TextOverflow.ellipsis,
+                                      maxLines: 1,
                                     ),
-                                    overflow: TextOverflow.ellipsis,
-                                    maxLines: 1,
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
-                            // Icon Positioned at the Bottom Right
-                            Positioned(
-                              bottom: 30.h,
-                              right: 20.w,
-                              child: IconButton(
-                                onPressed: () {},
-                                icon: SvgPicture.asset(
-                                  'assets/icons/arrowicon.svg',
-                                  height: 24.h,
-                                  color: AppColors.white,
+                            // Icon positioned at the bottom-right, also inside padding
+                            Padding(
+                              padding:
+                                  EdgeInsets.only(bottom: 30.h, right: 20.w),
+                              child: Align(
+                                alignment: Alignment.bottomRight,
+                                child: IconButton(
+                                  onPressed: () {},
+                                  icon: SvgPicture.asset(
+                                    'assets/icons/arrowicon.svg',
+                                    height: 24.h, // Responsive icon size
+                                    color: AppColors.white,
+                                  ),
                                 ),
                               ),
                             ),
@@ -204,23 +227,23 @@ class HomePage extends StatelessWidget {
                   itemCount: items.length,
                 ),
                 heading('Find Hospital near you'),
-                 SizedBox(
+                SizedBox(
                   height: 10.h,
                 ),
                 Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15.r),
-                    boxShadow:  [
+                    boxShadow: [
                       BoxShadow(
-                        color:AppColors.shadow, // Shadow color
-                        offset:
-                            Offset(0.w, 10.h), // Horizontal and vertical offsets
+                        color: AppColors.shadow, // Shadow color
+                        offset: Offset(
+                            0.w, 10.h), // Horizontal and vertical offsets
                         blurRadius: 15.r, // Blur radius
                         spreadRadius: -3.r, // Spread radius
                       ),
                     ],
                   ),
-                  constraints:  BoxConstraints(maxHeight: 256.h),
+                  constraints: BoxConstraints(maxHeight: 256.h),
                   child: ListView.builder(
                     shrinkWrap: true,
                     scrollDirection: Axis.horizontal,
@@ -229,20 +252,20 @@ class HomePage extends StatelessWidget {
                       return Stack(
                         children: [
                           Padding(
-                            padding:  EdgeInsets.only(right: 8.w, top: 10.h),
+                            padding: EdgeInsets.only(right: 8.w, top: 10.h),
                             child: Stack(
                               children: [
                                 Container(
                                   width: 200.w,
                                   decoration: BoxDecoration(
-                                      color:AppColors.white,
+                                      color: AppColors.white,
                                       borderRadius: BorderRadius.circular(8.r)),
                                   child: Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
                                       ClipRRect(
-                                        borderRadius:  BorderRadius.only(
+                                        borderRadius: BorderRadius.only(
                                             topLeft: Radius.circular(8.r),
                                             topRight: Radius.circular(8.r)),
                                         child: Image.asset(
@@ -252,7 +275,7 @@ class HomePage extends StatelessWidget {
                                           fit: BoxFit.cover,
                                         ),
                                       ),
-                                       Padding(
+                                      Padding(
                                         padding: EdgeInsets.only(
                                             left: 15.w, top: 15.h, bottom: 5.h),
                                         child: Text(
@@ -263,42 +286,41 @@ class HomePage extends StatelessWidget {
                                         ),
                                       ),
                                       Padding(
-                                        padding:
-                                             EdgeInsets.only(left: 15.w),
+                                        padding: EdgeInsets.only(left: 15.w),
                                         child: Row(
                                           children: [
                                             SvgPicture.asset(
                                               'assets/icons/locationicon.svg',
-                                              color:AppColors.grey3,
+                                              color: AppColors.grey3,
                                               fit: BoxFit.cover,
                                               height: 14.h,
                                               width: 14.w,
                                             ),
-                                             SizedBox(
+                                            SizedBox(
                                               width: 4.w,
                                             ),
-                                             Text(
+                                            Text(
                                               '123 Oak Street, CA 98765',
                                               style: TextStyle(
                                                   fontSize: 12.sp,
-                                                  color:AppColors.grey3),
+                                                  color: AppColors.grey3),
                                             )
                                           ],
                                         ),
                                       ),
                                       Padding(
-                                        padding:  EdgeInsets.only(
+                                        padding: EdgeInsets.only(
                                             left: 15.w, top: 5.h),
                                         child: Row(
                                           children: [
-                                             Text(
+                                            Text(
                                               '5.0',
                                               style: TextStyle(
-                                                  color:AppColors.grey3,
+                                                  color: AppColors.grey3,
                                                   fontWeight: FontWeight.w700,
                                                   fontSize: 12.sp),
                                             ),
-                                             SizedBox(
+                                            SizedBox(
                                               width: 4.w,
                                             ),
                                             SvgPicture.asset(
@@ -306,26 +328,26 @@ class HomePage extends StatelessWidget {
                                               height: 10.h,
                                               width: 10.7.w,
                                             ),
-                                             SizedBox(
+                                            SizedBox(
                                               width: 4.w,
                                             ),
-                                             Text(
+                                            Text(
                                               '(128 Reviews)',
                                               style: TextStyle(
-                                                  color:AppColors.grey3,
+                                                  color: AppColors.grey3,
                                                   fontSize: 12.sp,
                                                   fontWeight: FontWeight.w400),
                                             )
                                           ],
                                         ),
                                       ),
-                                       Divider(
-                                        color:AppColors.dividercolor ,
+                                      Divider(
+                                        color: AppColors.dividercolor,
                                         indent: 15.w,
                                         endIndent: 15.w,
                                       ),
                                       Padding(
-                                        padding:  EdgeInsets.only(
+                                        padding: EdgeInsets.only(
                                             left: 15.w, top: 5.h),
                                         child: Row(
                                           children: [
@@ -333,17 +355,17 @@ class HomePage extends StatelessWidget {
                                               'assets/icons/kmicon.svg',
                                               height: 16.h,
                                               width: 16.w,
-                                              color:AppColors.grey1,
+                                              color: AppColors.grey1,
                                             ),
-                                             SizedBox(
+                                            SizedBox(
                                               width: 10.w,
                                             ),
-                                           Text(
+                                            Text(
                                               '2.5 km/40min',
                                               style: TextStyle(
                                                   fontWeight: FontWeight.w400,
                                                   fontSize: 12.sp,
-                                                  color:AppColors.grey3),
+                                                  color: AppColors.grey3),
                                             )
                                           ],
                                         ),
@@ -359,51 +381,50 @@ class HomePage extends StatelessWidget {
                     },
                   ),
                 ),
-                 SizedBox(
+                SizedBox(
                   height: 20.h,
                 ),
                 heading('Doctor you Consulted'),
-                 SizedBox(
+                SizedBox(
                   height: 10.h,
                 ),
-                 ContainerDr(
+                ContainerDr(
                   height: 95.h,
                 ),
-                 SizedBox(
+                SizedBox(
                   height: 10.h,
                 ),
                 heading('My Consultations'),
-                 SizedBox(
+                SizedBox(
                   height: 10.h,
                 ),
                 Container(
                   height: 220.h,
                   width: 326.w,
                   decoration: BoxDecoration(
-                    boxShadow:  [
+                    boxShadow: [
                       BoxShadow(
-                        color:AppColors.shadow, // Shadow color
-                        offset:
-                            const Offset(0, 10), // Horizontal and vertical offsets
+                        color: AppColors.shadow, // Shadow color
+                        offset: const Offset(
+                            0, 10), // Horizontal and vertical offsets
                         blurRadius: 15..r, // Blur radius
                         spreadRadius: -3.r, // Spread radius
                       ),
                     ],
-                    color:AppColors.white,
+                    color: AppColors.white,
                     borderRadius: BorderRadius.circular(10.r),
                     border: Border.all(
-                      color:AppColors.blue4
-                          .withOpacity(0.25), // Border color
+                      color: AppColors.blue4.withOpacity(0.25), // Border color
                       width: 1.w, // Border width
                     ),
                   ),
                   child: Padding(
-                    padding:  EdgeInsets.only(left: 20.w),
+                    padding: EdgeInsets.only(left: 20.w),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                         SizedBox(
+                        SizedBox(
                           height: 25.h,
                         ),
                         Text(
@@ -414,40 +435,40 @@ class HomePage extends StatelessWidget {
                             fontWeight: FontWeight.w400,
                           ),
                         ),
-                         SizedBox(
+                        SizedBox(
                           height: 10.h,
                         ),
                         Row(
                           children: [
                             SvgPicture.asset(
                               'assets/icons/clockicon.svg',
-                              color:AppColors.grey4,
+                              color: AppColors.grey4,
                               height: 16.67.h,
                               width: 16.67.h,
                             ),
-                             SizedBox(
+                            SizedBox(
                               width: 4.w,
                             ),
-                             Text(
+                            Text(
                               'Sep, Wed 20 . 10:00 am - 10:30 am',
                               style: TextStyle(
-                                  color:AppColors.grey2,
+                                  color: AppColors.grey2,
                                   fontSize: 12.sp,
                                   fontWeight: FontWeight.w400),
                             )
                           ],
                         ),
-                         SizedBox(
+                        SizedBox(
                           height: 20.h,
                         ),
                         Row(
                           children: [
-                             CircleAvatar(
+                            CircleAvatar(
                               radius: 20.r,
                               backgroundImage: const AssetImage(
                                   'assets/homepageimages/Ellipse 190.png'),
                             ),
-                             SizedBox(
+                            SizedBox(
                               width: 10.w,
                             ),
                             Column(
@@ -462,13 +483,13 @@ class HomePage extends StatelessWidget {
                                     fontSize: 12.sp,
                                   ),
                                 ),
-                                 SizedBox(
+                                SizedBox(
                                   height: 5.h,
                                 ),
-                                 Text(
+                                Text(
                                   'Psychologists | Apollo hospital',
                                   style: TextStyle(
-                                      color:AppColors.grey5,
+                                      color: AppColors.grey5,
                                       fontSize: 12.sp,
                                       fontWeight: FontWeight.w400),
                                 ),
@@ -478,9 +499,9 @@ class HomePage extends StatelessWidget {
                         ),
                         GestureDetector(
                           onTap: () => Get.toNamed('MyConsultations'),
-                          child:  Padding(
-                            padding:
-                                EdgeInsets.only(right: 20.w, top: 20.h, bottom: 20.h),
+                          child: Padding(
+                            padding: EdgeInsets.only(
+                                right: 20.w, top: 20.h, bottom: 20.h),
                             child: ButtonCustom(
                                 name: 'Click Here', height: 35.h, width: 291.w),
                           ),
@@ -489,15 +510,15 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                 ),
-                 SizedBox(
+                SizedBox(
                   height: 20.h,
                 ),
                 heading('Featured Services'),
-                 SizedBox(
+                SizedBox(
                   height: 10.h,
                 ),
                 Padding(
-                  padding:  EdgeInsets.only(right: 20.w, bottom: 20.h),
+                  padding: EdgeInsets.only(right: 20.w, bottom: 20.h),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -557,15 +578,15 @@ class Container3 extends StatelessWidget {
             children: [
               Text(
                 text1,
-                style:  TextStyle(
-                    color:AppColors.white,
+                style: TextStyle(
+                    color: AppColors.white,
                     fontSize: 15.sp,
                     fontWeight: FontWeight.w700),
               ),
               Text(
                 text2,
-                style:  TextStyle(
-                    color:AppColors.white,
+                style: TextStyle(
+                    color: AppColors.white,
                     fontSize: 15.sp,
                     fontWeight: FontWeight.w700),
               ),
@@ -577,7 +598,7 @@ class Container3 extends StatelessWidget {
             top: 20.h,
             child: SvgPicture.asset(
               'assets/icons/arrowicon.svg',
-              color:AppColors.white,
+              color: AppColors.white,
               height: 24.h,
               width: 24.w,
             ))
@@ -596,7 +617,7 @@ class ContainerDr extends StatelessWidget {
       height: height,
       width: 326.w,
       decoration: BoxDecoration(
-        boxShadow:  [
+        boxShadow: [
           BoxShadow(
             color: AppColors.shadow, // Shadow color
             offset: const Offset(0, 10), // Horizontal and vertical offsets
@@ -604,7 +625,7 @@ class ContainerDr extends StatelessWidget {
             spreadRadius: -3.r, // Spread radius
           ),
         ],
-        color:AppColors.white,
+        color: AppColors.white,
         borderRadius: BorderRadius.circular(10.r),
         border: Border.all(
           color: AppColors.blue4.withOpacity(0.25), // Border color
@@ -614,7 +635,7 @@ class ContainerDr extends StatelessWidget {
       child: Center(
         child: Row(
           children: [
-             Padding(
+            Padding(
               padding: EdgeInsets.symmetric(horizontal: 15.w),
               child: CircleAvatar(
                 radius: 20.r,
@@ -634,13 +655,13 @@ class ContainerDr extends StatelessWidget {
                     fontSize: 12.sp,
                   ),
                 ),
-                 SizedBox(
+                SizedBox(
                   height: 5.h,
                 ),
-                 Text(
+                Text(
                   'Psychologists | Apollo hospital',
                   style: TextStyle(
-                      color:AppColors.grey5,
+                      color: AppColors.grey5,
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w400),
                 ),

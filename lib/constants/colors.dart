@@ -47,7 +47,7 @@ class AppColors {
   static Color shadow = const Color(0x1A000000);
   static Color shadow1 = const Color(0x0D000000);
 
-  ////////////////////////////
+  ////////////////////////////MULTIPLE COLORS/////////////////////////////
 
   static Color yellowshade = const Color(0xffFFF48E);
   static Color redshade = const Color(0xffFFABA5);

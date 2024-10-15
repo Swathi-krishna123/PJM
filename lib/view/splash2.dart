@@ -65,6 +65,7 @@ class Splash2 extends StatelessWidget {
           Column(
             children: [
               GestureDetector(
+                
                 onTap: () {
                   // Navigate to the next page
                   Get.toNamed('/customBottomNavBar');
