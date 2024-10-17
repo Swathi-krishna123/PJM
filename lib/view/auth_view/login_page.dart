@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:patient_journey_management/constants/colors.dart';
+import 'package:patient_journey_management/utilities/custom_widgets/button.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({Key? key}) : super(key: key);
@@ -144,6 +145,12 @@ class _LoginPageState extends State<LoginPage> {
                               Border.all(color: AppColors.blue7, width: 1.w),
                         ),
                         child: TextFormField(
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Please enter your password';
+                            }
+                            return null;
+                          },
                           controller: passwordController,
                           obscureText: !isPasswordVisible,
                           cursorColor: AppColors.blue,
@@ -203,7 +210,7 @@ class _LoginPageState extends State<LoginPage> {
                                 isLoading = false;
                               });
 
-                              Get.toNamed('/homepage');
+                              Get.offNamed('/CustomBottomNavigationBar');
                             }
                           } catch (e) {
                             ScaffoldMessenger.of(context).showSnackBar(
@@ -216,31 +223,7 @@ class _LoginPageState extends State<LoginPage> {
                                   color: AppColors.blue,
                                 ),
                               )
-                            : Container(
-                                width: 279.w,
-                                height: 48.h,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(4),
-                                  gradient: const LinearGradient(
-                                    begin: Alignment.topCenter,
-                                    end: Alignment.bottomCenter,
-                                    colors: [
-                                      Color(0xFF065FD5),
-                                      Color(0xFF064DAB),
-                                    ],
-                                  ),
-                                ),
-                                child: Center(
-                                  child: Text(
-                                    'Login',
-                                    style: TextStyle(
-                                      color: AppColors.white,
-                                      fontSize: 14.sp,
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                  ),
-                                ),
-                              ),
+                            : ButtonCustom(name: 'Login', height: 48.h, width: 279.w)
                       ),
                       SizedBox(height: 20.h),
                       // Social sign-up options
@@ -260,7 +243,7 @@ class _LoginPageState extends State<LoginPage> {
                           SvgPicture.asset('assets/icons/windowsicon.svg'),
                         ],
                       ),
-                      const SizedBox(height: 10),
+                       SizedBox(height: 10.h),
                     ],
                   ),
                 ),

@@ -20,18 +20,21 @@ class ButtonCustom extends StatelessWidget {
       height: height,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(4),
-        gradient: LinearGradient(
-          colors: [AppColors.bluegradient1, AppColors.bluegradient2],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
+        gradient: const LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [
+            Color(0xFF065FD5),
+            Color(0xFF064DAB),
+          ],
         ),
       ),
       child: Center(
         child: Text(
           name,
-          style:  TextStyle(
-            color:AppColors.white,
-            fontSize: 12,
+          style: TextStyle(
+            color: AppColors.white,
+            fontSize: 14,
             fontWeight: FontWeight.w600,
           ),
         ),

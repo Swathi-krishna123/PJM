@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:intl_phone_field/country_picker_dialog.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:patient_journey_management/constants/colors.dart';
+import 'package:patient_journey_management/utilities/custom_widgets/button.dart';
 
 class RegisterPage extends StatefulWidget {
   RegisterPage({super.key});
@@ -52,43 +53,43 @@ class _RegisterPageState extends State<RegisterPage> {
             Positioned(
               left: size.width / 25,
               right: size.width / 25,
-              top: 45,
+              top: 55,
               child: Column(
                 children: [
                   SizedBox(
-                    width: size.width / 8,
-                    height: size.height / 8,
+                    width: 40.w,
+                    height:40.h,
                     child: SvgPicture.asset('assets/icons/ghologo.svg'),
                   ),
-                  const Text(
+                  SizedBox(height: 10.h,),
+                   Text(
                     'Sign Up',
                     style: TextStyle(
-                        color: Colors.white,
+                        color:AppColors.white,
                         fontWeight: FontWeight.w700,
-                        fontSize: 36),
+                        fontSize: 36.sp),
                   ),
-                  const SizedBox(
-                    height: 10,
+                   SizedBox(
+                    height: 10.h,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text(
+                       Text(
                         "Already have an account    ",
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle(color:AppColors.white),
                         textAlign: TextAlign.center,
                       ),
                       InkWell(
                         onTap: () {
-                          Navigator.pushNamed(
-                              context, '/LoginPage'); // Use standard navigation
+                          Get.toNamed('/LoginPage');
                         },
-                        child: const Text(
+                        child:  Text(
                           "Sign In",
                           style: TextStyle(
-                              color: Colors.white,
+                              color: AppColors.white,
                               decoration: TextDecoration.underline,
-                              decorationColor: Colors.white,
+                              decorationColor: AppColors.white,
                               fontWeight: FontWeight.bold),
                           textAlign: TextAlign.center,
                         ),
@@ -98,6 +99,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 ],
               ),
             ),
+
             Positioned(
               top: size.height / 3,
               left: 25,
@@ -107,12 +109,12 @@ class _RegisterPageState extends State<RegisterPage> {
                 width: 327.w,
                 height: 511.h,
                 decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(4),
-                  boxShadow: const [
+                  color: AppColors.white,
+                  borderRadius: BorderRadius.circular(4.r),
+                  boxShadow:  [
                     BoxShadow(
-                      color: Color(0x1A000000),
-                      blurRadius: 12,
+                      color:AppColors.shadow,
+                      blurRadius: 12.r,
                       offset: Offset(0, 0),
                     ),
                   ],
@@ -127,7 +129,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     child: Column(
                       children: [
                         CommonWidgets().textFormField(
-                          hinttext: 'Enter your last name',
+                          hinttext: 'Enter first  name',
                           txtController: lastnamecontroller,
                           validator: (value) {
                             if (value!.isEmpty) {
@@ -137,9 +139,9 @@ class _RegisterPageState extends State<RegisterPage> {
                             return null;
                           },
                         ),
-                        const SizedBox(height: 20),
+                         SizedBox(height: 20.h),
                         CommonWidgets().textFormField(
-                          hinttext: 'Enter your first name',
+                          hinttext: 'Enter your last name',
                           txtController: firstnamecontroller,
                           validator: (value) {
                             if (value!.isEmpty) {
@@ -149,10 +151,10 @@ class _RegisterPageState extends State<RegisterPage> {
                             return null;
                           },
                         ),
-                        const SizedBox(height: 20),
+                         SizedBox(height: 20.h),
                         phonenumberTxtfield(),
-                        const SizedBox(
-                          height: 20,
+                         SizedBox(
+                          height: 20.h,
                         ),
                         CommonWidgets().textFormField(
                           hinttext: 'Enter your email',
@@ -171,14 +173,14 @@ class _RegisterPageState extends State<RegisterPage> {
                             return null;
                           },
                         ),
-                        const SizedBox(
-                          height: 20,
+                         SizedBox(
+                          height: 20.h,
                         ),
                         Container(
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(4),
+                            borderRadius: BorderRadius.circular(4.r),
                             border: Border.all(
-                                color: const Color(0xB2B0C7E6), width: 1),
+                                color:AppColors.blue7, width: 1.w),
                           ),
                           child: TextFormField(
                             controller: passwordcontroller,
@@ -202,34 +204,34 @@ class _RegisterPageState extends State<RegisterPage> {
                                   registerpassobscureText
                                       ? Icons.visibility_off
                                       : Icons.visibility,
-                                  color: Colors.grey,
+                                  color:AppColors.grey,
                                 ),
                               ),
                               hintText: 'Enter password',
                               enabledBorder: InputBorder.none,
-                              errorBorder: const OutlineInputBorder(
+                              errorBorder:  OutlineInputBorder(
                                 borderSide: BorderSide.none,
                                 borderRadius:
-                                    BorderRadius.all(Radius.circular(85)),
+                                    BorderRadius.all(Radius.circular(85.r)),
                               ),
-                              focusedErrorBorder: const OutlineInputBorder(
+                              focusedErrorBorder:  OutlineInputBorder(
                                 borderSide: BorderSide.none,
                                 borderRadius:
-                                    BorderRadius.all(Radius.circular(85)),
+                                    BorderRadius.all(Radius.circular(85.r)),
                               ),
                               focusedBorder: InputBorder.none,
-                              contentPadding: const EdgeInsets.all(12),
+                              contentPadding:  EdgeInsets.all(12.w),
                             ),
                           ),
                         ),
-                        const SizedBox(
-                          height: 20,
+                         SizedBox(
+                          height: 20.h,
                         ),
                         Container(
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(4),
+                            borderRadius: BorderRadius.circular(4.r),
                             border: Border.all(
-                                color: const Color(0xB2B0C7E6), width: 1),
+                                color:AppColors.blue7, width: 1.w),
                           ),
                           child: TextFormField(
                             controller: confirmcontroller,
@@ -256,23 +258,23 @@ class _RegisterPageState extends State<RegisterPage> {
                                   registerconfirmpassobscureText
                                       ? Icons.visibility_off
                                       : Icons.visibility,
-                                  color: Colors.grey,
+                                  color:AppColors.grey,
                                 ),
                               ),
                               hintText: 'Confirm password',
                               enabledBorder: InputBorder.none,
-                              errorBorder: const OutlineInputBorder(
+                              errorBorder:  OutlineInputBorder(
                                 borderSide: BorderSide.none,
                                 borderRadius:
-                                    BorderRadius.all(Radius.circular(85)),
+                                    BorderRadius.all(Radius.circular(85.r)),
                               ),
-                              focusedErrorBorder: const OutlineInputBorder(
+                              focusedErrorBorder:  OutlineInputBorder(
                                 borderSide: BorderSide.none,
                                 borderRadius:
-                                    BorderRadius.all(Radius.circular(85)),
+                                    BorderRadius.all(Radius.circular(85.r)),
                               ),
                               focusedBorder: InputBorder.none,
-                              contentPadding: const EdgeInsets.all(12),
+                              contentPadding:  EdgeInsets.all(12.w),
                             ),
                           ),
                         ),
@@ -330,49 +332,50 @@ class _RegisterPageState extends State<RegisterPage> {
                         ),
                         if (isCheckboxError)
                           Padding(
-                            padding: EdgeInsets.only(left: 8.0),
+                            padding:  EdgeInsets.only(left: 8.0.w),
                             child: Align(
                               alignment: Alignment.centerLeft,
                               child: Text(
                                 "Please agree to the terms of service & privacy policy to continue",
                                 style: TextStyle(
                                   color: AppColors.error,
-                                  fontSize: 12,
+                                  fontSize: 12.sp,
                                 ),
                               ),
                             ),
                           ),
-                        const SizedBox(
-                          height: 10,
+                         SizedBox(
+                          height: 10.h,
                         ),
                         // register button
                         GestureDetector(
                           onTap: () async {
-                            if (_formKey.currentState!.validate() &&
-                                isChecked) {
-                              setState(() {
-                                isLoading = true;
-                              });
-
-                              // Simulate a network call with a delay
-                              await Future.delayed(const Duration(seconds: 2));
-
-                              setState(() {
-                                isLoading = false;
-                              });
-
-                              ScaffoldMessenger.of(context)
-                                  .showSnackBar(const SnackBar(
-                                content: Text('Registration Successful'),
-                              ));
-
-                              Get.toNamed('/LoginPage');
-                            } else {
-                              if (!isChecked) {
+                            try {
+                              if (_formKey.currentState!.validate() &&
+                                  isChecked) {
                                 setState(() {
-                                  isCheckboxError = true;
+                                  isLoading = true;
                                 });
+
+                                // Simulate a network call with a delay
+                                await Future.delayed(
+                                    const Duration(seconds: 2));
+
+                                setState(() {
+                                  isLoading = false;
+                                });
+
+                                Get.offNamed('/OtpConfirmation');
+                              } else {
+                                if (!isChecked) {
+                                  setState(() {
+                                    isCheckboxError = true;
+                                  });
+                                }
                               }
+                            } catch (e) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(content: Text('$e'.toString())));
                             }
                           },
                           child: isLoading
@@ -381,31 +384,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                     color: AppColors.blue,
                                   ),
                                 )
-                              : Container(
-                                  width: 279.w,
-                                  height: 48.h,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(4),
-                                    gradient: const LinearGradient(
-                                      begin: Alignment.topCenter,
-                                      end: Alignment.bottomCenter,
-                                      colors: [
-                                        Color(0xFF065FD5),
-                                        Color(0xFF064DAB),
-                                      ],
-                                    ),
-                                  ),
-                                  child: Center(
-                                    child: Text(
-                                      'Sign Up',
-                                      style: TextStyle(
-                                        color: AppColors.white,
-                                        fontSize: 14.sp,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                  ),
-                                ),
+                              : ButtonCustom(name: 'Sign Up', height: 48, width: 279)
                         ),
                       ],
                     ),
@@ -428,21 +407,21 @@ class _RegisterPageState extends State<RegisterPage> {
         width: 300,
         countryCodeStyle: const TextStyle(fontWeight: FontWeight.bold),
       ),
-      decoration: const InputDecoration(
+      decoration:  InputDecoration(
         hintText: 'Phone Number',
         enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Color(0xB2B0C7E6))),
+            borderSide: BorderSide(color:AppColors.blue7)),
         errorBorder: OutlineInputBorder(
           borderSide: BorderSide.none,
-          borderRadius: BorderRadius.all(Radius.circular(85)),
+          borderRadius: BorderRadius.all(Radius.circular(85.r)),
         ),
         focusedErrorBorder: OutlineInputBorder(
           borderSide: BorderSide.none,
-          borderRadius: BorderRadius.all(Radius.circular(85)),
+          borderRadius: BorderRadius.all(Radius.circular(85.r)),
         ),
         focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Color(0xB2B0C7E6))),
-        contentPadding: EdgeInsets.all(12),
+            borderSide: BorderSide(color:AppColors.blue7)),
+        contentPadding: EdgeInsets.all(12.w),
       ),
       onChanged: (phone) {
         print(phone.completeNumber);
@@ -462,7 +441,7 @@ class CommonWidgets {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(4),
-        border: Border.all(color: const Color(0xB2B0C7E6), width: 1),
+        border: Border.all(color:AppColors.blue7, width: 1),
       ),
       child: TextFormField(
         controller: txtController,
@@ -472,16 +451,16 @@ class CommonWidgets {
         decoration: InputDecoration(
           hintText: hinttext,
           enabledBorder: InputBorder.none,
-          errorBorder: const OutlineInputBorder(
+          errorBorder:  OutlineInputBorder(
             borderSide: BorderSide.none,
-            borderRadius: BorderRadius.all(Radius.circular(85)),
+            borderRadius: BorderRadius.all(Radius.circular(85.r)),
           ),
-          focusedErrorBorder: const OutlineInputBorder(
+          focusedErrorBorder:  OutlineInputBorder(
             borderSide: BorderSide.none,
-            borderRadius: BorderRadius.all(Radius.circular(85)),
+            borderRadius: BorderRadius.all(Radius.circular(85.r)),
           ),
           focusedBorder: InputBorder.none,
-          contentPadding: const EdgeInsets.all(12),
+          contentPadding:  EdgeInsets.all(12.w),
         ),
       ),
     );

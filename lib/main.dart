@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:patient_journey_management/constants/colors.dart';
 import 'package:patient_journey_management/utilities/custom_bottom_navbar.dart';
+import 'package:patient_journey_management/view/auth_view/otp_verification.dart';
 import 'package:patient_journey_management/view/auth_view/register_page.dart';
 import 'package:patient_journey_management/view/my_consultations/appointment_status.dart';
 import 'package:patient_journey_management/view/book_an_appointment/appointment_type.dart';
@@ -80,6 +81,9 @@ class MyApp extends StatelessWidget {
           GetPage(
               name: '/RegisterPage',
               page: () =>  RegisterPage()),
+          GetPage(
+              name: '/OtpConfirmation',
+              page: () =>  OtpConfirmation()),
         ],
       ),
     );
