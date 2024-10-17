@@ -27,6 +27,7 @@ class AppColors {
   static Color blue4 = const Color(0xff4987FF);
   static Color blue5 = const Color(0xff1C2A3A);
   static Color blue6 = const Color(0xff0B181F);
+  static Color blue7 = const Color(0xffB0C7E6);
 
   ////////////////////// GREY COLORS////////////////////////////
 
@@ -40,6 +41,7 @@ class AppColors {
   static Color grey7 = const Color(0xff4B5563);
   static Color grey8 = const Color(0xff6A7683);
   static Color grey9 = const Color(0xffB3AFAF);
+  static Color grey10 = const Color(0xff6C7278);
  
 
   static Color textcolor = const Color(0xff283343);
@@ -58,4 +60,5 @@ class AppColors {
   static Color red =  const Color(0xffE52516);
   static Color green =   const Color(0xff12A817);
   static Color red1 =   const Color(0xff771D1D);
+  static Color error =   Color.fromARGB(255, 165, 25, 15);
 }

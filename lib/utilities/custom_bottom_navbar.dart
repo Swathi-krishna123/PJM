@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:patient_journey_management/constants/colors.dart';
-import 'package:patient_journey_management/view/appointmentpage.dart';
-import 'package:patient_journey_management/view/homepage.dart';
-import 'package:patient_journey_management/view/notificationpage.dart';
-import 'package:patient_journey_management/view/profilepage.dart';
+import 'package:patient_journey_management/view/my_bookings/appointmentpage.dart';
+import 'package:patient_journey_management/view/home_page/homepage.dart';
+import 'package:patient_journey_management/view/notifications/notificationpage.dart';
+import 'package:patient_journey_management/view/profile_page/profilepage.dart';
 
 class CustomBottomNavigationBar extends StatefulWidget {
   const CustomBottomNavigationBar({super.key});

@@ -4,7 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:patient_journey_management/utilities/custom_widgets/button.dart';
 
-import '../constants/colors.dart';
+import '../../constants/colors.dart';
 
 class DrInfo extends StatelessWidget {
   const DrInfo({super.key});

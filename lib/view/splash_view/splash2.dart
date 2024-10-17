@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../constants/colors.dart';
+import '../../constants/colors.dart';
 
 class Splash2 extends StatelessWidget {
   const Splash2({super.key});
@@ -68,7 +68,7 @@ class Splash2 extends StatelessWidget {
                 
                 onTap: () {
                   // Navigate to the next page
-                  Get.toNamed('/Login');
+                  Get.toNamed('/LoginPage');
                 },
                 child: Container(
                   width: 326.w, // Responsive width

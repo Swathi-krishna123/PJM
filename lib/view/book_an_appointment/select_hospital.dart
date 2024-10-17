@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:patient_journey_management/constants/colors.dart';
 import 'package:patient_journey_management/utilities/custom_widgets/button.dart';
-import '../controller/hospitalController.dart';
+import '../../controller/hospitalController.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 
 class SelectHospital extends StatelessWidget {

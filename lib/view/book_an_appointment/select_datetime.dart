@@ -8,8 +8,8 @@ import 'package:patient_journey_management/constants/colors.dart';
 import 'package:patient_journey_management/controller/datecontroller.dart';
 import 'package:patient_journey_management/utilities/custom_widgets/button.dart';
 import 'package:table_calendar/table_calendar.dart';
-import '../utilities/custom_widgets/headings.dart';
-import 'homepage.dart';
+import '../../utilities/custom_widgets/headings.dart';
+import '../home_page/homepage.dart';
 
 class SelectDateAndTime extends StatelessWidget {
   const SelectDateAndTime({super.key});

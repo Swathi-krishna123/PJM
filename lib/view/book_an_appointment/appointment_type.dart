@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:patient_journey_management/utilities/custom_widgets/headings.dart';
-import 'package:patient_journey_management/view/select_hospital.dart';
+import 'package:patient_journey_management/view/book_an_appointment/select_hospital.dart';
 
-import '../constants/colors.dart';
+import '../../constants/colors.dart';
 
 class AppointmentType extends StatelessWidget {
   const AppointmentType({super.key});

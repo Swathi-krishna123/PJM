@@ -3,9 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:patient_journey_management/utilities/custom_widgets/headings.dart';
-import 'package:patient_journey_management/view/map_screen.dart';
+import 'package:patient_journey_management/view/my_consultations/map_screen.dart';
 
-import '../constants/colors.dart';
+import '../../constants/colors.dart';
 
 class MyConsultations extends StatelessWidget {
   const MyConsultations({super.key});

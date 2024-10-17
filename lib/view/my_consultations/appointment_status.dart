@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:patient_journey_management/utilities/custom_widgets/button.dart';
 
-import '../constants/colors.dart';
+import '../../constants/colors.dart';
 
 class AppointmentStatus extends StatelessWidget {
   const AppointmentStatus({super.key});

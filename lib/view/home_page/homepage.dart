@@ -4,9 +4,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:patient_journey_management/constants/colors.dart';
 import 'package:patient_journey_management/utilities/custom_widgets/button.dart';
-import 'package:patient_journey_management/view/select_place.dart';
+import 'package:patient_journey_management/view/home_page/select_place.dart';
 
-import '../utilities/custom_widgets/headings.dart';
+import '../../utilities/custom_widgets/headings.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
