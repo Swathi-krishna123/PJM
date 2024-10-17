@@ -25,13 +25,13 @@ class UpComing extends StatelessWidget {
                   boxShadow: [
                     BoxShadow(
                       color:AppColors.shadow1, // First shadow color
-                      offset: Offset(0, 4), // Shadow position
+                      offset: const Offset(0, 4), // Shadow position
                       blurRadius: 6.r, // Blur radius
                       spreadRadius: 0.r, // Spread radius
                     ),
                     BoxShadow(
                       color: AppColors.shadow, // Second shadow color
-                      offset: Offset(0, 10), // Shadow position
+                      offset: const Offset(0, 10), // Shadow position
                       blurRadius: 15.r, // Blur radius
                       spreadRadius: -3.r, // Negative spread radius
                     ),

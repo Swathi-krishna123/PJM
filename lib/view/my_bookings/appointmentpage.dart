@@ -40,15 +40,15 @@ class AppointmentPage extends StatelessWidget {
             indicator: const BoxDecoration(), // Removes the indicator
             splashFactory: NoSplash.splashFactory, // Removes splash effect
             tabs: <Widget>[
-              Container(
+              SizedBox(
                 width: 90.w,
                 child: const Tab(text: 'Upcoming'),
               ),
-              Container(
+              SizedBox(
                 width: 90.w,
                 child: const Tab(text: 'Completed'),
               ),
-              Container(
+              SizedBox(
                 width: 90.w,
                 child: const Tab(text: 'Canceled'),
               ),

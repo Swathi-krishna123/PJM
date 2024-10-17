@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
 import 'package:patient_journey_management/constants/colors.dart';
 
 class Notificationpage extends StatelessWidget {
@@ -94,7 +93,7 @@ class Notificationpage extends StatelessWidget {
               tileColor: AppColors.white,
               leading: CircleAvatar(
                 radius: 35.r,
-                backgroundColor:AppColors.white3,
+                backgroundColor:AppColors.bordercolor1,
                 child: Center(
                     child: SvgPicture.asset(
                         'assets/icons/cancelappointmenticon.svg')),

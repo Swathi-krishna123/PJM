@@ -113,7 +113,7 @@ class SelectDateAndTime extends StatelessWidget {
                       ),
                       headerStyle: HeaderStyle(
                           formatButtonVisible: false,
-                          rightChevronIcon: Icon(Icons.arrow_right),
+                          rightChevronIcon: const Icon(Icons.arrow_right),
                           leftChevronVisible: false,
                           headerMargin: EdgeInsets.only(left: 5.w),
                           titleTextStyle: TextStyle(

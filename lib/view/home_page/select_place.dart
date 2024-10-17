@@ -44,6 +44,7 @@ class _SelectPlaceState extends State<SelectPlace> {
       body: Center(
         child: DropdownButtonHideUnderline(
           child: DropdownButton2<String>(
+            
             alignment: Alignment.centerRight,
             isExpanded: true,
 
@@ -56,6 +57,7 @@ class _SelectPlaceState extends State<SelectPlace> {
             ),
             items: items
                 .map((item) => DropdownMenuItem(
+
                       alignment: Alignment.centerRight,
                       value: item,
                       child: Text(
@@ -116,7 +118,10 @@ class _SelectPlaceState extends State<SelectPlace> {
                 ),
               ),
               searchMatchFn: (item, searchValue) {
-                return item.value.toString().contains(searchValue);
+                return item.value
+                    .toString()
+                    .toLowerCase()
+                    .contains(searchValue);
               },
             ),
             //This to clear the search value when you close the menu

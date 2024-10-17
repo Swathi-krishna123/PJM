@@ -11,7 +11,8 @@ class AppColors {
 
   static Color white1 = const Color(0xffE1E7EE);
   static Color white2 = const Color(0xffDEF7E5);
-  static Color white3 = const Color(0xffFDE8E8);
+  static Color white3 = const Color(0xffEEEEEE);
+  
   static Color white4 = const Color(0xffE3F6FF);
   static Color white5 = const Color(0xffCDE1FF);
 
@@ -52,6 +53,7 @@ class AppColors {
   static Color yellowshade = const Color(0xffFFF48E);
   static Color redshade = const Color(0xffFFABA5);
   static Color bordercolor = const Color(0xffFFD5C4);
+  static Color bordercolor1 = const Color(0xffFDE8E8);
   static Color yellow = const Color(0xffEED600);
   static Color red =  const Color(0xffE52516);
   static Color green =   const Color(0xff12A817);

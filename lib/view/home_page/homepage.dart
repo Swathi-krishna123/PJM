@@ -9,7 +9,7 @@ import 'package:patient_journey_management/view/select_place.dart';
 import '../utilities/custom_widgets/headings.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -42,24 +42,32 @@ class HomePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  CircleAvatar(
-                    radius: 25.r,
-                    backgroundImage:
-                        const AssetImage('assets/homepageimages/Frame 586.png'),
+                  SizedBox(
+                    height: 40,
+                    width: 40,
+                    child: CircleAvatar(
+                      radius: 20.r,
+                      backgroundImage:
+                          const AssetImage('assets/homepageimages/Frame 586.png'),
+                    ),
                   ),
-                  SizedBox(width: 10.w),
+                  
                   Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        CircleAvatar(
-                          backgroundColor: AppColors.white1,
-                          radius: 20.r,
-                          child: Center(
-                            child: Icon(
-                              Icons.add,
-                              color: AppColors.blue2,
-                              size: 15.sp,
+                        SizedBox(
+                          height: 32,
+                          width: 32,
+                          child: CircleAvatar(
+                            backgroundColor: AppColors.white1,
+                            radius: 20.r,
+                            child: Center(
+                              child: Icon(
+                                Icons.add,
+                                color: AppColors.blue2,
+                                size: 10.sp,
+                              ),
                             ),
                           ),
                         ),
@@ -68,32 +76,16 @@ class HomePage extends StatelessWidget {
                         ),
                         Text(
                           'Add Member',
-                          style: TextStyle(color: AppColors.blue3),
+                          style: TextStyle(
+                              color: AppColors.blue3,
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w400),
                         )
                       ]),
                 ],
               ),
             ),
             const Spacer(),
-            // Padding(
-            //   padding: EdgeInsets.only(right: 20.w),
-            //   child: Row(
-            //     children: [
-            //       Text(
-            //         'Kochi  ',
-            //         style: TextStyle(
-            //           fontSize: 14.sp,
-            //           color: AppColors.grey2,
-            //         ),
-            //       ),
-            //       SvgPicture.asset(
-            //         'assets/icons/arrowdown.svg',
-            //         color: AppColors.grey2,
-            //         height: 6.h,
-            //       ),
-            //     ],
-            //   ),
-            // )
             SizedBox(width: 155.w, child: const SelectPlace())
           ],
         ),

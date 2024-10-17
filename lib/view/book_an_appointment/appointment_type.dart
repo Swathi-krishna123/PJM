@@ -44,7 +44,7 @@ class AppointmentType extends StatelessWidget {
                   showDialog(
                     
                     context: context,
-                    builder: (context) => SelectHospital(),
+                    builder: (context) => const SelectHospital(),
                   );
                 },
                 child: ContainerCustom(

@@ -13,7 +13,7 @@ class Splash2 extends StatelessWidget {
         children: [
           const Spacer(),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15), // Use .w for responsive padding
+            padding: const EdgeInsets.symmetric(horizontal: 15), // Use .w for responsive padding
             child: Image.asset(
               'assets/splash_images/splash.png',
               height: 370.h, // Example of responsive height
@@ -68,7 +68,7 @@ class Splash2 extends StatelessWidget {
                 
                 onTap: () {
                   // Navigate to the next page
-                  Get.toNamed('/customBottomNavBar');
+                  Get.toNamed('/Login');
                 },
                 child: Container(
                   width: 326.w, // Responsive width

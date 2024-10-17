@@ -161,6 +161,9 @@ class AppointmentStatus extends StatelessWidget {
                 TextFormField(
                   maxLines: 6,
                   decoration: InputDecoration(
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: AppColors.blue50),
+                    ),
                       hintText: 'Write your review here...',
                       hintStyle:  TextStyle(color:AppColors.grey9),
                       filled: true,
@@ -169,7 +172,8 @@ class AppointmentStatus extends StatelessWidget {
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10.r),
                           borderSide:  BorderSide(
-                            color: AppColors.white3,
+                            color: AppColors.bordercolor1,
+                          
                           ))),
                 ),
                 SizedBox(

@@ -41,6 +41,9 @@ dependencies:
   dropdown_button2: ^2.3.9
   table_calendar: ^3.1.2
   flutter_screenutil: ^5.9.3
+  flutter_map: ^7.0.2
+  latlong2: ^0.9.1
+  geolocator: ^8.1.1
 
 dev_dependencies:
   flutter_test:

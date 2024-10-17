@@ -9,6 +9,7 @@ import 'package:patient_journey_management/view/appointment_type.dart';
 import 'package:patient_journey_management/view/appointmentpage.dart';
 import 'package:patient_journey_management/view/dr_info.dart';
 import 'package:patient_journey_management/view/homepage.dart';
+import 'package:patient_journey_management/view/login.dart';
 import 'package:patient_journey_management/view/myconsultations.dart';
 import 'package:patient_journey_management/view/notificationpage.dart';
 import 'package:patient_journey_management/view/select_datetime.dart';
@@ -30,17 +31,20 @@ class MyApp extends StatelessWidget {
     // print(height);
     // print(width);
     return ScreenUtilInit(
-      designSize: Size(360, 640),
+      designSize: const Size(360, 640),
       child: GetMaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Patient Journey Management',
         theme: ThemeData(
           textSelectionTheme: TextSelectionThemeData(
-              selectionColor: AppColors.blue50,
-              cursorColor: AppColors.blue,
-              selectionHandleColor: AppColors.blue),
+            selectionColor: AppColors.blue50,
+            cursorColor: AppColors.blue,
+            selectionHandleColor: AppColors.blue,
+          ),
           scaffoldBackgroundColor: AppColors.background,
-          appBarTheme: AppBarTheme(color: AppColors.background,surfaceTintColor: AppColors.background),
+          appBarTheme: AppBarTheme(
+              color: AppColors.background,
+              surfaceTintColor: AppColors.background),
           textTheme: GoogleFonts.latoTextTheme(),
         ),
         initialRoute: '/',
@@ -69,6 +73,9 @@ class MyApp extends StatelessWidget {
           GetPage(
               name: '/AppointmentStatus',
               page: () => const AppointmentStatus()),
+          GetPage(
+              name: '/Login',
+              page: () => const Login()),
         ],
       ),
     );

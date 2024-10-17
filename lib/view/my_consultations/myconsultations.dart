@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:patient_journey_management/utilities/custom_widgets/headings.dart';
+import 'package:patient_journey_management/view/map_screen.dart';
 
 import '../constants/colors.dart';
 
@@ -187,6 +188,7 @@ class MyConsultations extends StatelessWidget {
                 decoration: BoxDecoration(
                     color: AppColors.grey,
                     borderRadius: BorderRadius.circular(10.r)),
+                    child: const MapScreen(),
               ),
               SizedBox(
                 height: 20.h,

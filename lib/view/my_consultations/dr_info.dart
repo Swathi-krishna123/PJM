@@ -70,7 +70,7 @@ class DrInfo extends StatelessWidget {
                                   fontSize: 18.sp,
                                   fontWeight: FontWeight.w700),
                             ),
-                            Spacer(),
+                            const Spacer(),
                             Text(
                               '4.8',
                               style: TextStyle(
@@ -104,7 +104,7 @@ class DrInfo extends StatelessWidget {
                                   fontSize: 16.sp,
                                   fontWeight: FontWeight.w400),
                             ),
-                            Spacer(),
+                            const Spacer(),
                             IconButton(
                                 onPressed: () {},
                                 icon: Icon(
