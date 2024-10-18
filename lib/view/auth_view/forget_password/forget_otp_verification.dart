@@ -60,11 +60,11 @@ class _ForgetpasswordotpState extends State<Forgetpasswordotp> {
                   Container(
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color:AppColors.white,
                       borderRadius: BorderRadius.circular(4),
-                      boxShadow: const [
+                      boxShadow:  [
                         BoxShadow(
-                          color: Color(0x1A000000),
+                          color:AppColors.shadow,
                           blurRadius: 12,
                           offset: Offset(0, 0),
                         ),
@@ -78,20 +78,20 @@ class _ForgetpasswordotpState extends State<Forgetpasswordotp> {
                           Text(
                             'Verify OTP',
                             style: TextStyle(
-                              color: Colors.black,
+                              color:AppColors.blue6,
                               fontWeight: FontWeight.w700,
-                              fontSize: 34.sp,
+                              fontSize: 30.sp,
                             ),
                           ),
                           SizedBox(height: 10.h),
                           Text(
                             "Enter the OTP",
-                            style: TextStyle(color: Colors.grey.shade700),
+                            style: TextStyle(color:AppColors.grey2),
                             textAlign: TextAlign.center,
                           ),
                           Text(
                             "We just sent you on your registered email",
-                            style: TextStyle(color: Colors.grey.shade700),
+                            style: TextStyle(color:AppColors.grey2),
                             textAlign: TextAlign.center,
                           ),
                           SizedBox(height: 25.h),
@@ -172,13 +172,13 @@ class _ForgetpasswordotpState extends State<Forgetpasswordotp> {
                               child: Center(
                                 child: isLoading
                                     ? LoadingAnimationWidget.fourRotatingDots(
-                                        color: Colors.white,
+                                        color:AppColors.white,
                                         size: 24.w,
                                       )
                                     : Text(
                                         'Verify',
                                         style: TextStyle(
-                                            color: Colors.white, fontSize: 18.sp),
+                                            color:AppColors.white, fontSize: 14.sp),
                                       ),
                               ),
                             ),
@@ -187,9 +187,9 @@ class _ForgetpasswordotpState extends State<Forgetpasswordotp> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              const Text(
+                               Text(
                                 "Didn't get the code?  ",
-                                style: TextStyle(color: Colors.grey),
+                                style: TextStyle(color:AppColors.grey),
                               ),
                               GestureDetector(
                                 onTap: () async {

@@ -125,7 +125,7 @@ class _LoginPageState extends State<LoginPage> {
                       loginTextform(
                         textcontroller: emailController,
 
-                        hinttext: 'Enter Your Email or Phone number',
+                        hinttext: 'Enter Your Email',
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             return 'Please enter your email';

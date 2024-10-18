@@ -59,7 +59,7 @@ class _CreateNewPasswordState extends State<CreateNewPassword> {
                     style: TextStyle(
                         color: AppColors.blue6,
                         fontWeight: FontWeight.w700,
-                        fontSize: 32.sp),
+                        fontSize: 30.sp),
                   ),
                   SizedBox(
                     height: 10.h,
@@ -67,7 +67,7 @@ class _CreateNewPasswordState extends State<CreateNewPassword> {
                   Text(
                     "Your new password must be different from previously used password",
                     style:
-                        TextStyle(color: Colors.grey.shade700, fontSize: 14.sp),
+                        TextStyle(color: AppColors.grey2, fontSize: 14.sp),
                     textAlign: TextAlign.center,
                   ),
                   SizedBox(
@@ -77,7 +77,7 @@ class _CreateNewPasswordState extends State<CreateNewPassword> {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(4.r),
                       border:
-                          Border.all(color: const Color(0xB2B0C7E6), width: 1),
+                          Border.all(color:AppColors.blue7, width: 1),
                     ),
                     child: TextFormField(
                       controller: newpasscontroller,
@@ -95,7 +95,7 @@ class _CreateNewPasswordState extends State<CreateNewPassword> {
                             obscureText
                                 ? Icons.visibility_off
                                 : Icons.visibility,
-                            color: Colors.grey,
+                            color:AppColors.grey,
                           ),
                         ),
                         hintText: 'New password',
@@ -120,7 +120,7 @@ class _CreateNewPasswordState extends State<CreateNewPassword> {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(4.r),
                       border: Border.all(
-                          color: const Color(0xB2B0C7E6), width: 1.w),
+                          color:AppColors.blue7, width: 1.w),
                     ),
                     child: TextFormField(
                       controller: confirmpasscontroller,
@@ -193,21 +193,21 @@ class _CreateNewPasswordState extends State<CreateNewPassword> {
                       child: Center(
                         child: isLoading
                             ? LoadingAnimationWidget.fourRotatingDots(
-                                color: Colors.white,
+                                color:AppColors.white,
                                 size: 24.sp,
                               )
                             : Text(
                                 'Reset Password',
                                 style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20.sp,
+                                  color:AppColors.white,
+                                  fontSize: 14.sp,
                                 ),
                               ),
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 10,
+                   SizedBox(
+                    height: 10.h,
                   )
                 ],
               ),

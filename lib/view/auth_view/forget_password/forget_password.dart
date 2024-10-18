@@ -54,7 +54,7 @@ class _ForgetpasswordemailState extends State<Forgetpasswordemail> {
                 style: TextStyle(
                   color: AppColors.blue6,
                   fontWeight: FontWeight.w700,
-                  fontSize: 34.sp,
+                  fontSize: 30.sp,
                 ),
               ),
               SizedBox(
@@ -62,12 +62,12 @@ class _ForgetpasswordemailState extends State<Forgetpasswordemail> {
               ),
               Text(
                 "Enter your Email",
-                style: TextStyle(color: Colors.grey.shade700),
+                style: TextStyle(color:AppColors.grey2),
                 textAlign: TextAlign.center,
               ),
               Text(
                 "We will send you a verification code.",
-                style: TextStyle(color: Colors.grey.shade700),
+                style: TextStyle(color:AppColors.grey2),
                 textAlign: TextAlign.center,
               ),
               SizedBox(
@@ -76,13 +76,14 @@ class _ForgetpasswordemailState extends State<Forgetpasswordemail> {
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(4.r),
-                  border: Border.all(color: const Color(0xB2B0C7E6), width: 1),
+                  border: Border.all(color:AppColors.blue7, width: 1.w),
                 ),
                 child: TextFormField(
                   controller: emailcontroller,
                   validator: validateField,
                   cursorColor: AppColors.blue,
                   decoration: InputDecoration(
+                    hintStyle: TextStyle(fontSize: 14.sp),
                     hintText: 'Enter your registered email',
                     enabledBorder: InputBorder.none,
                     errorBorder: OutlineInputBorder(
@@ -98,7 +99,7 @@ class _ForgetpasswordemailState extends State<Forgetpasswordemail> {
                   ),
                 ),
               ),
-              const SizedBox(height: 25),
+               SizedBox(height: 25.h),
               GestureDetector(
                 onTap: () async {
                   if (_formKey.currentState!.validate()) {
@@ -133,21 +134,21 @@ class _ForgetpasswordemailState extends State<Forgetpasswordemail> {
                   child: Center(
                     child: isLoading
                         ? LoadingAnimationWidget.fourRotatingDots(
-                            color: Colors.white,
+                            color:AppColors.white,
                             size: 24.sp,
                           )
                         : Text(
                             'Continue',
                             style: TextStyle(
-                              color: Colors.white,
+                              color:AppColors.white,
                               fontSize: 14.sp,
                             ),
                           ),
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 10,
+               SizedBox(
+                height: 10.h,
               ),
             ],
           ),
