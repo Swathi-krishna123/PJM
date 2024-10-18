@@ -124,7 +124,8 @@ class _LoginPageState extends State<LoginPage> {
                       // Email input
                       loginTextform(
                         textcontroller: emailController,
-                        hinttext: 'Enter Your Email',
+
+                        hinttext: 'Enter Your Email or Phone number',
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             return 'Please enter your email';
@@ -168,6 +169,7 @@ class _LoginPageState extends State<LoginPage> {
                                 color: AppColors.grey,
                               ),
                             ),
+                            hintStyle: TextStyle(fontSize: 14),
                             hintText: 'Enter password',
                             enabledBorder: InputBorder.none,
                             focusedBorder: InputBorder.none,
@@ -180,7 +182,9 @@ class _LoginPageState extends State<LoginPage> {
                       Align(
                         alignment: Alignment.centerRight,
                         child: GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Get.toNamed('/Forgetpasswordemail');
+                          },
                           child: RichText(
                             text: TextSpan(
                               text: 'Forget Password?',
@@ -272,6 +276,7 @@ class _LoginPageState extends State<LoginPage> {
         cursorColor: AppColors.blue,
         decoration: InputDecoration(
           hintText: hinttext,
+          hintStyle: TextStyle(fontSize: 14),
           enabledBorder: InputBorder.none,
           errorBorder: OutlineInputBorder(
             borderSide: BorderSide.none,

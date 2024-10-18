@@ -68,7 +68,7 @@ class Splash2 extends StatelessWidget {
                 
                 onTap: () {
                   // Navigate to the next page
-                  Get.toNamed('/LoginPage');
+                  Get.offNamed('/LoginPage');
                 },
                 child: Container(
                   width: 326.w, // Responsive width

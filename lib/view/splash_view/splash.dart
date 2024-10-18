@@ -16,7 +16,7 @@ class _Splash1State extends State<Splash1> {
     super.initState();
     // Wait for 3 seconds before navigating to Splash2
     Future.delayed(const Duration(seconds: 3), () {
-      Get.to(() => const Splash2()); // Navigate after the delay
+      Get.off(() => const Splash2()); // Navigate after the delay
     });
   }
 
