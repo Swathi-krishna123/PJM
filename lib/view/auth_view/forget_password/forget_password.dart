@@ -62,12 +62,12 @@ class _ForgetpasswordemailState extends State<Forgetpasswordemail> {
               ),
               Text(
                 "Enter your Email",
-                style: TextStyle(color:AppColors.grey2),
+                style: TextStyle(color: AppColors.grey2),
                 textAlign: TextAlign.center,
               ),
               Text(
                 "We will send you a verification code.",
-                style: TextStyle(color:AppColors.grey2),
+                style: TextStyle(color: AppColors.grey2),
                 textAlign: TextAlign.center,
               ),
               SizedBox(
@@ -76,7 +76,7 @@ class _ForgetpasswordemailState extends State<Forgetpasswordemail> {
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(4.r),
-                  border: Border.all(color:AppColors.blue7, width: 1.w),
+                  border: Border.all(color: AppColors.blue7, width: 1.w),
                 ),
                 child: TextFormField(
                   controller: emailcontroller,
@@ -99,7 +99,7 @@ class _ForgetpasswordemailState extends State<Forgetpasswordemail> {
                   ),
                 ),
               ),
-               SizedBox(height: 25.h),
+              SizedBox(height: 25.h),
               GestureDetector(
                 onTap: () async {
                   if (_formKey.currentState!.validate()) {
@@ -134,20 +134,20 @@ class _ForgetpasswordemailState extends State<Forgetpasswordemail> {
                   child: Center(
                     child: isLoading
                         ? LoadingAnimationWidget.fourRotatingDots(
-                            color:AppColors.white,
+                            color: AppColors.white,
                             size: 24.sp,
                           )
                         : Text(
                             'Continue',
                             style: TextStyle(
-                              color:AppColors.white,
+                              color: AppColors.white,
                               fontSize: 14.sp,
                             ),
                           ),
                   ),
                 ),
               ),
-               SizedBox(
+              SizedBox(
                 height: 10.h,
               ),
             ],
