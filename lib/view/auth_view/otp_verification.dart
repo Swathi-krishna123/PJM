@@ -39,19 +39,14 @@ class _OtpConfirmationState extends State<OtpConfirmation> {
         key: _formKey,
         child: Stack(
           children: [
-            Container(
-              width: size.width,
-              height: size.height,
-              color: AppColors.blue,
-            ),
-            Positioned(
-              top: size.height / 2,
-              child: Container(
+             Positioned(
                 width: size.width,
-                height: size.height / 1.5,
-                color: AppColors.background,
-              ),
-            ),
+                height: size.height,
+                child: Image.asset(
+                  'assets/homepageimages/Sign Up.png',
+                  fit: BoxFit.cover,
+                )),
+            
             Positioned(
               left: size.width / 25,
               right: size.width / 25,
@@ -67,7 +62,7 @@ class _OtpConfirmationState extends State<OtpConfirmation> {
                     'Verify\nEmail Address',
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      color: Colors.white,
+                      color:AppColors.headline,
                       fontWeight: FontWeight.w700,
                       fontSize: size.width / 11,
                     ),
@@ -76,7 +71,7 @@ class _OtpConfirmationState extends State<OtpConfirmation> {
                   Text(
                     "OTP has been sent to $email",
                     style: TextStyle(
-                        color: AppColors.white, fontSize: size.width / 30),
+                        color: AppColors.grey10, fontSize: size.width / 30),
                     textAlign: TextAlign.center,
                   ),
                 ],
@@ -90,7 +85,7 @@ class _OtpConfirmationState extends State<OtpConfirmation> {
                 width: size.width,
                 decoration: BoxDecoration(
                   color: AppColors.white,
-                  borderRadius: BorderRadius.circular(4),
+                  borderRadius: BorderRadius.circular(10),
                   boxShadow: [
                     BoxShadow(
                       color: const Color(0x1A000000),
@@ -218,7 +213,7 @@ class _OtpConfirmationState extends State<OtpConfirmation> {
                                           decoration: BoxDecoration(
                                             border: Border.all(color: AppColors.blue),
                                             borderRadius:
-                                                BorderRadius.circular(4.r),
+                                                BorderRadius.circular(10.r),
                                           ),
                                           child: Center(
                                             child: Text(

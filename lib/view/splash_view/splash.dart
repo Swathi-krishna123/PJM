@@ -15,7 +15,7 @@ class _Splash1State extends State<Splash1> {
   void initState() {
     super.initState();
     // Wait for 3 seconds before navigating to Splash2
-    Future.delayed(const Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 1), () {
       Get.off(() => const Splash2()); // Navigate after the delay
     });
   }
@@ -23,12 +23,7 @@ class _Splash1State extends State<Splash1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Image.asset(
-        'assets/splash_images/Background.png',
-        fit: BoxFit.cover,
-        width: double.infinity,
-        height: double.infinity,
-      ),
+      backgroundColor:Color(0xff244C81),
     );
   }
 }

@@ -30,128 +30,170 @@ class _ForgetpasswordemailState extends State<Forgetpasswordemail> {
 
   @override
   Widget build(BuildContext context) {
+    final Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: Form(
         key: _formKey,
-        child: Padding(
-          padding: EdgeInsets.only(left: 25.w, right: 25.w),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SizedBox(
-                width: 60.w,
-                height: 54.w,
-                child: SvgPicture.asset(
-                  'assets/icons/ghologo.svg',
-                  color: AppColors.blue,
-                ),
-              ),
-              SizedBox(
-                height: 25.h,
-              ),
-              Text(
-                'Forget Password?',
-                style: TextStyle(
-                  color: AppColors.blue6,
-                  fontWeight: FontWeight.w700,
-                  fontSize: 30.sp,
-                ),
-              ),
-              SizedBox(
-                height: 10.h,
-              ),
-              Text(
-                "Enter your Email",
-                style: TextStyle(color: AppColors.grey2),
-                textAlign: TextAlign.center,
-              ),
-              Text(
-                "We will send you a verification code.",
-                style: TextStyle(color: AppColors.grey2),
-                textAlign: TextAlign.center,
-              ),
-              SizedBox(
-                height: 25.h,
-              ),
-              Container(
+        child: Stack(
+          children: [
+            Positioned(
+                width: size.width,
+                height: size.height,
+                child: Image.asset(
+                  'assets/homepageimages/Sign Up.png',
+                  fit: BoxFit.cover,
+                )),
+
+            // Login elements
+
+            Positioned(
+              top: size.height / 4,
+              left: 25,
+              right: 25,
+              child: Container(
+                width: size.width,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(4.r),
-                  border: Border.all(color: AppColors.blue7, width: 1.w),
+                  color: AppColors.white.withOpacity(0.6),
+                  borderRadius: BorderRadius.circular(12),
+                  boxShadow: const [
+                    BoxShadow(
+                      color: Color(0x1A000000),
+                      blurRadius: 12,
+                      offset: Offset(0, 0),
+                    ),
+                  ],
                 ),
-                child: TextFormField(
-                  controller: emailcontroller,
-                  validator: validateField,
-                  cursorColor: AppColors.blue,
-                  decoration: InputDecoration(
-                    hintStyle: TextStyle(fontSize: 14.sp),
-                    hintText: 'Enter your registered email',
-                    enabledBorder: InputBorder.none,
-                    errorBorder: OutlineInputBorder(
-                      borderSide: BorderSide.none,
-                      borderRadius: BorderRadius.all(Radius.circular(85.r)),
-                    ),
-                    focusedErrorBorder: OutlineInputBorder(
-                      borderSide: BorderSide.none,
-                      borderRadius: BorderRadius.all(Radius.circular(85.r)),
-                    ),
-                    focusedBorder: InputBorder.none,
-                    contentPadding: EdgeInsets.all(12.r),
+                child: Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 20.w,
+                    vertical: 15.h,
                   ),
-                ),
-              ),
-              SizedBox(height: 25.h),
-              GestureDetector(
-                onTap: () async {
-                  if (_formKey.currentState!.validate()) {
-                    setState(() {
-                      isLoading = true;
-                    });
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        height: 25.h,
+                      ),
+                      Text(
+                        'Forget Password?',
+                        style: TextStyle(
+                          color: AppColors.headline,
+                          fontWeight: FontWeight.w700,
+                          fontSize: 32.sp,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10.h,
+                      ),
+                      Text(
+                        "Enter your Email",
+                        style: TextStyle(color: AppColors.grey2),
+                        textAlign: TextAlign.center,
+                      ),
+                      Text(
+                        "We will send you a verification code.",
+                        style: TextStyle(color: AppColors.grey2),
+                        textAlign: TextAlign.center,
+                      ),
+                      SizedBox(
+                        height: 25.h,
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10.r),
+                        ),
+                        child: TextFormField(
+                          controller: emailcontroller,
+                          cursorColor: AppColors.blue50,
+                          validator: validateField,
+                          decoration: InputDecoration(
+                            filled: true,
+                            fillColor: AppColors.white,
+                            floatingLabelStyle:
+                                TextStyle(color: AppColors.blue),
+                            labelText: 'Your Email',
+                            labelStyle: TextStyle(
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.w500,
+                                color: AppColors.labelcolor),
+                            border: OutlineInputBorder(),
+                            enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(color: AppColors.white),
+                                borderRadius: BorderRadius.circular(10.r)),
+                            errorBorder: OutlineInputBorder(
+                              borderSide: BorderSide.none,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10.r)),
+                            ),
+                            focusedErrorBorder: OutlineInputBorder(
+                              borderSide: BorderSide.none,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10.r)),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10.r),
+                                borderSide: BorderSide(color: AppColors.blue)),
+                            contentPadding: EdgeInsets.all(12.w),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 25.h),
+                      GestureDetector(
+                        onTap: () async {
+                          if (_formKey.currentState!.validate()) {
+                            setState(() {
+                              isLoading = true;
+                            });
 
-                    // Simulate loading and perform necessary action here
-                    await Future.delayed(const Duration(seconds: 2));
+                            // Simulate loading and perform necessary action here
+                            await Future.delayed(const Duration(seconds: 2));
 
-                    setState(() {
-                      isLoading = false;
-                    });
+                            setState(() {
+                              isLoading = false;
+                            });
 
-                    Get.toNamed('/Forgetpasswordotp');
-                  }
-                },
-                child: Container(
-                  width: double.infinity,
-                  height: 55.h,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(4.r),
-                    gradient: const LinearGradient(
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                      colors: [
-                        Color(0xFF065FD5),
-                        Color(0xFF064DAB),
-                      ],
-                    ),
-                  ),
-                  child: Center(
-                    child: isLoading
-                        ? LoadingAnimationWidget.fourRotatingDots(
-                            color: AppColors.white,
-                            size: 24.sp,
-                          )
-                        : Text(
-                            'Continue',
-                            style: TextStyle(
-                              color: AppColors.white,
-                              fontSize: 14.sp,
+                            Get.toNamed('/Forgetpasswordotp');
+                          }
+                        },
+                        child: Container(
+                          width: double.infinity,
+                          height: 55.h,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10.r),
+                            gradient: const LinearGradient(
+                              begin: Alignment.topCenter,
+                              end: Alignment.bottomCenter,
+                              colors: [
+                                Color(0xFF065FD5),
+                                Color(0xFF064DAB),
+                              ],
                             ),
                           ),
+                          child: Center(
+                            child: isLoading
+                                ? LoadingAnimationWidget.fourRotatingDots(
+                                    color: AppColors.white,
+                                    size: 24.sp,
+                                  )
+                                : Text(
+                                    'Continue',
+                                    style: TextStyle(
+                                      color: AppColors.white,
+                                      fontSize: 14.sp,
+                                    ),
+                                  ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10.h,
+                      ),
+                    ],
                   ),
                 ),
               ),
-              SizedBox(
-                height: 10.h,
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthController extends GetxController {
   // State variables
@@ -34,13 +35,16 @@ class AuthController extends GetxController {
       isLoading.value = false;
     }
   }
+
   /////////////////////////Handle Register Logic //////////////////////
 
   Future<void> register() async {
     try {
       isLoading.value = true;
-
+      // Simulating a registration process with a delay
       await Future.delayed(const Duration(seconds: 2));
+
+      // Navigate to OTP confirmation screen
       Get.toNamed('/OtpConfirmation');
     } catch (e) {
       isLoading.value = false;

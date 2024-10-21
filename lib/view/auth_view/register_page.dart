@@ -503,80 +503,87 @@ class RegisterPage extends StatelessWidget {
         key: _formKey,
         child: Stack(
           children: [
-            Container(
-              width: size.width,
-              height: size.height,
-              color: AppColors.blue,
-            ),
+            // Container(
+            //   width: size.width,
+            //   height: size.height,
+            //   color: AppColors.blue,
+            // ),
+            // Positioned(
+            //   top: size.height / 2,
+            //   child: Container(
+            //     width: size.width,
+            //     height: size.height / 1.5,
+            //     color: AppColors.background,
+            //   ),
+            // ),
             Positioned(
-              top: size.height / 2,
-              child: Container(
                 width: size.width,
-                height: size.height / 1.5,
-                color: AppColors.background,
-              ),
-            ),
+                height: size.height,
+                child: Image.asset(
+                  'assets/homepageimages/Sign Up.png',
+                  fit: BoxFit.cover,
+                )),
+            // Positioned(
+            //   left: size.width / 25,
+            //   right: size.width / 25,
+            //   top: 55,
+            //   child: Column(
+            //     children: [
+            //       SizedBox(
+            //         width: 40.w,
+            //         height: 40.h,
+            //         child: SvgPicture.asset('assets/icons/ghologo.svg'),
+            //       ),
+            //       SizedBox(
+            //         height: 10.h,
+            //       ),
+            //       Text(
+            //         'Sign Up',
+            //         style: TextStyle(
+            //             color: AppColors.white,
+            //             fontWeight: FontWeight.w700,
+            //             fontSize: 36.sp),
+            //       ),
+            //       SizedBox(
+            //         height: 10.h,
+            //       ),
+            //       Row(
+            //         mainAxisAlignment: MainAxisAlignment.center,
+            //         children: [
+            //           Text(
+            //             "Already have an account    ",
+            //             style: TextStyle(color: AppColors.white),
+            //             textAlign: TextAlign.center,
+            //           ),
+            //           InkWell(
+            //             onTap: () {
+            //               Get.toNamed('/LoginPage');
+            //             },
+            //             child: Text(
+            //               "Sign In",
+            //               style: TextStyle(
+            //                   color: AppColors.white,
+            //                   decoration: TextDecoration.underline,
+            //                   decorationColor: AppColors.white,
+            //                   fontWeight: FontWeight.bold),
+            //               textAlign: TextAlign.center,
+            //             ),
+            //           ),
+            //         ],
+            //       )
+            //     ],
+            //   ),
+            // ),
             Positioned(
-              left: size.width / 25,
-              right: size.width / 25,
-              top: 55,
-              child: Column(
-                children: [
-                  SizedBox(
-                    width: 40.w,
-                    height: 40.h,
-                    child: SvgPicture.asset('assets/icons/ghologo.svg'),
-                  ),
-                  SizedBox(
-                    height: 10.h,
-                  ),
-                  Text(
-                    'Sign Up',
-                    style: TextStyle(
-                        color: AppColors.white,
-                        fontWeight: FontWeight.w700,
-                        fontSize: 36.sp),
-                  ),
-                  SizedBox(
-                    height: 10.h,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Already have an account    ",
-                        style: TextStyle(color: AppColors.white),
-                        textAlign: TextAlign.center,
-                      ),
-                      InkWell(
-                        onTap: () {
-                          Get.toNamed('/LoginPage');
-                        },
-                        child: Text(
-                          "Sign In",
-                          style: TextStyle(
-                              color: AppColors.white,
-                              decoration: TextDecoration.underline,
-                              decorationColor: AppColors.white,
-                              fontWeight: FontWeight.bold),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                    ],
-                  )
-                ],
-              ),
-            ),
-            Positioned(
-              top: size.height / 3,
+              top: size.height / 10,
               left: 25,
               right: 25,
               bottom: size.height / 15,
               child: Container(
-                width: 327.w,
-                height: 511.h,
+                width: 343.w,
+                height: 672.h,
                 decoration: BoxDecoration(
-                  color: AppColors.white,
+                  color: AppColors.white.withOpacity(0.6),
                   borderRadius: BorderRadius.circular(4.r),
                   boxShadow: [
                     BoxShadow(
@@ -595,8 +602,47 @@ class RegisterPage extends StatelessWidget {
                     physics: const BouncingScrollPhysics(),
                     child: Column(
                       children: [
+                        Text(
+                          'Sign Up',
+                          style: TextStyle(
+                              color: AppColors.headline,
+                              fontWeight: FontWeight.w700,
+                              fontSize: 32.sp),
+                        ),
+                        SizedBox(
+                          height: 10.h,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              "Already have an account    ",
+                              style: TextStyle(
+                                  color: AppColors.grey10,
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w300),
+                              textAlign: TextAlign.center,
+                            ),
+                            InkWell(
+                              onTap: () {
+                                Get.toNamed('/LoginPage');
+                              },
+                              child: Text(
+                                "Sign In",
+                                style: TextStyle(
+                                    color: AppColors.blue,
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.bold),
+                                textAlign: TextAlign.center,
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
                         CommonWidgets().textFormField(
-                          hinttext: 'Enter first  name',
+                          labeltext: 'Enter first  name',
                           txtController: lastnamecontroller,
                           validator: (value) {
                             if (value!.isEmpty) {
@@ -608,7 +654,7 @@ class RegisterPage extends StatelessWidget {
                         ),
                         SizedBox(height: 20.h),
                         CommonWidgets().textFormField(
-                          hinttext: 'Enter your last name',
+                          labeltext: 'Enter your last name',
                           txtController: firstnamecontroller,
                           validator: (value) {
                             if (value!.isEmpty) {
@@ -624,7 +670,7 @@ class RegisterPage extends StatelessWidget {
                           height: 20.h,
                         ),
                         CommonWidgets().textFormField(
-                          hinttext: 'Enter your email',
+                          labeltext: 'Enter your email',
                           txtController: emailcontroller,
                           validator: (value) {
                             if (value!.isEmpty) {
@@ -646,11 +692,11 @@ class RegisterPage extends StatelessWidget {
                         Obx(
                           () => Container(
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(4.r),
-                              border: Border.all(
-                                  color: AppColors.blue7, width: 1.w),
+                              borderRadius: BorderRadius.circular(10.r),
+                              
                             ),
                             child: TextFormField(
+                              
                               controller: passwordcontroller,
                               obscureText:
                                   !authController.isPasswordVisible.value,
@@ -658,10 +704,23 @@ class RegisterPage extends StatelessWidget {
                                 if (value!.isEmpty) {
                                   return 'This field is Required';
                                 }
+                                if (value.length < 6) {
+                                  return 'Password must be at least 6 characters long';
+                                }
+                                // final RegExp regex = RegExp(
+                                //     r'^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{12,}$');
+
+                                // if (!regex.hasMatch(value)) {
+                                //   return ' Strong Password !!';
+                                // }
+
                                 return null;
                               },
                               cursorColor: AppColors.blue50,
                               decoration: InputDecoration(
+                                floatingLabelStyle: TextStyle(color: AppColors.blue),
+                                filled: true,
+                                fillColor: AppColors.white,
                                 suffixIcon: IconButton(
                                   onPressed: () {
                                     authController.togglePasswordVisibility();
@@ -673,19 +732,27 @@ class RegisterPage extends StatelessWidget {
                                     color: AppColors.grey,
                                   ),
                                 ),
-                                hintText: 'Enter password',
-                                enabledBorder: InputBorder.none,
+                                border: OutlineInputBorder(),
+                                labelText: 'Enter password',
+                                labelStyle: TextStyle(color: AppColors.labelcolor,fontWeight: FontWeight.w500,fontSize: 14),
+                                enabledBorder: OutlineInputBorder(
+                                    borderSide:
+                                        BorderSide(color: AppColors.white),
+                                    borderRadius: BorderRadius.circular(10.r)),
                                 errorBorder: OutlineInputBorder(
                                   borderSide: BorderSide.none,
                                   borderRadius:
-                                      BorderRadius.all(Radius.circular(85.r)),
+                                      BorderRadius.all(Radius.circular(10.r)),
                                 ),
                                 focusedErrorBorder: OutlineInputBorder(
                                   borderSide: BorderSide.none,
                                   borderRadius:
-                                      BorderRadius.all(Radius.circular(85.r)),
+                                      BorderRadius.all(Radius.circular(10.r)),
                                 ),
-                                focusedBorder: InputBorder.none,
+                                focusedBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(10.r),
+                                    borderSide:
+                                        BorderSide(color: AppColors.blue)),
                                 contentPadding: EdgeInsets.all(12.w),
                               ),
                             ),
@@ -697,9 +764,7 @@ class RegisterPage extends StatelessWidget {
                         Obx(
                           () => Container(
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(4.r),
-                              border: Border.all(
-                                  color: AppColors.blue7, width: 1.w),
+                              borderRadius: BorderRadius.circular(10.r),
                             ),
                             child: TextFormField(
                               controller: confirmcontroller,
@@ -716,6 +781,10 @@ class RegisterPage extends StatelessWidget {
                               },
                               cursorColor: AppColors.blue50,
                               decoration: InputDecoration(
+                                floatingLabelStyle:
+                                    TextStyle(color: AppColors.blue),
+                                filled: true,
+                                fillColor: AppColors.white,
                                 suffixIcon: IconButton(
                                   onPressed: () {
                                     authController.togglePasswordVisibility();
@@ -727,19 +796,26 @@ class RegisterPage extends StatelessWidget {
                                     color: AppColors.grey,
                                   ),
                                 ),
-                                hintText: 'Confirm password',
-                                enabledBorder: InputBorder.none,
+                                labelText: 'Confirm password',
+                                labelStyle: TextStyle(color: AppColors.labelcolor,fontWeight: FontWeight.w500,fontSize: 14),
+                                enabledBorder: OutlineInputBorder(
+                                    borderSide:
+                                        BorderSide(color: AppColors.white),
+                                    borderRadius: BorderRadius.circular(10.r)),
                                 errorBorder: OutlineInputBorder(
                                   borderSide: BorderSide.none,
                                   borderRadius:
-                                      BorderRadius.all(Radius.circular(85.r)),
+                                      BorderRadius.all(Radius.circular(10.r)),
                                 ),
                                 focusedErrorBorder: OutlineInputBorder(
                                   borderSide: BorderSide.none,
                                   borderRadius:
-                                      BorderRadius.all(Radius.circular(85.r)),
+                                      BorderRadius.all(Radius.circular(10.r)),
                                 ),
-                                focusedBorder: InputBorder.none,
+                                focusedBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(10.r),
+                                    borderSide:
+                                        BorderSide(color: AppColors.blue)),
                                 contentPadding: EdgeInsets.all(12.w),
                               ),
                             ),
@@ -759,9 +835,7 @@ class RegisterPage extends StatelessWidget {
                                 activeColor: AppColors.blue,
                                 checkColor: AppColors.white,
                                 side: BorderSide(
-                                  color: authController.isChecked.value
-                                      ? AppColors.blue
-                                      : AppColors.error,
+                                  color: AppColors.blue,
                                   width: 2,
                                 ),
                                 shape: RoundedRectangleBorder(
@@ -776,16 +850,12 @@ class RegisterPage extends StatelessWidget {
                                   fontSize: 10.sp,
                                   fontWeight: FontWeight.w500),
                             ),
-                            Obx(
-                              ()=> Text(
-                                "Terms of Service ",
-                                style: TextStyle(
-                                    color: authController.isChecked.value
-                                        ? AppColors.blue
-                                        : AppColors.error,
-                                    fontSize: 10.sp,
-                                    fontWeight: FontWeight.w500),
-                              ),
+                            Text(
+                              "Terms of Service ",
+                              style: TextStyle(
+                                  color: AppColors.blue,
+                                  fontSize: 10.sp,
+                                  fontWeight: FontWeight.w500),
                             ),
                             Text(
                               "& ",
@@ -794,16 +864,12 @@ class RegisterPage extends StatelessWidget {
                                   fontWeight: FontWeight.w500,
                                   fontSize: 10.sp),
                             ),
-                            Obx(
-                              ()=> Text(
-                                "Privacy Policy",
-                                style: TextStyle(
-                                    color: authController.isChecked.value
-                                        ? AppColors.blue
-                                        : AppColors.error,
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 10.sp),
-                              ),
+                            Text(
+                              "Privacy Policy",
+                              style: TextStyle(
+                                  color: AppColors.blue,
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 10.sp),
                             ),
                           ],
                         ),
@@ -847,8 +913,36 @@ class RegisterPage extends StatelessWidget {
                                         color: AppColors.blue,
                                       ),
                                     )
-                                  : const ButtonCustom(
-                                      name: 'Sign Up', height: 48, width: 279)),
+                                  : Container(
+                                      width: 279,
+                                      height: 48,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(10),
+                                        gradient: LinearGradient(
+                                          begin: Alignment.topCenter,
+                                          end: Alignment.bottomCenter,
+                                          colors: authController.isChecked.value
+                                              ? [
+                                                  const Color(0xFF065FD5),
+                                                  const Color(0xFF064DAB),
+                                                ]
+                                              : [
+                                                  AppColors.blue50,
+                                                  AppColors.blue50
+                                                ],
+                                        ),
+                                      ),
+                                      child: Center(
+                                        child: Text(
+                                          " Sign Up",
+                                          style: TextStyle(
+                                            color: AppColors.white,
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                        ),
+                                      ),
+                                    )),
                         ),
                       ],
                     ),
@@ -872,19 +966,29 @@ class RegisterPage extends StatelessWidget {
         countryCodeStyle: const TextStyle(fontWeight: FontWeight.bold),
       ),
       decoration: InputDecoration(
-        hintText: 'Phone Number',
-        enabledBorder:
-            OutlineInputBorder(borderSide: BorderSide(color: AppColors.blue7)),
+        filled: true,
+        fillColor: AppColors.white,
+        floatingLabelStyle: TextStyle(color: AppColors.blue),
+        labelText: 'Phone Number',
+        labelStyle: TextStyle(
+            fontSize: 14.sp,
+            fontWeight: FontWeight.w500,
+            color: AppColors.labelcolor),
+        border: OutlineInputBorder(),
+        enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: AppColors.white),
+            borderRadius: BorderRadius.circular(10.r)),
         errorBorder: OutlineInputBorder(
           borderSide: BorderSide.none,
-          borderRadius: BorderRadius.all(Radius.circular(85.r)),
+          borderRadius: BorderRadius.all(Radius.circular(10.r)),
         ),
         focusedErrorBorder: OutlineInputBorder(
           borderSide: BorderSide.none,
-          borderRadius: BorderRadius.all(Radius.circular(85.r)),
+          borderRadius: BorderRadius.all(Radius.circular(10.r)),
         ),
-        focusedBorder:
-            OutlineInputBorder(borderSide: BorderSide(color: AppColors.blue7)),
+        focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10.r),
+            borderSide: BorderSide(color: AppColors.blue)),
         contentPadding: EdgeInsets.all(12.w),
       ),
       onChanged: (phone) {
@@ -897,15 +1001,15 @@ class RegisterPage extends StatelessWidget {
 class CommonWidgets {
   Container textFormField({
     TextEditingController? txtController,
-    String? hinttext,
+    String? labeltext,
     Widget? prefixIcon,
     TextInputType keyboardtype = TextInputType.text,
     String? Function(String?)? validator,
   }) {
     return Container(
+      width: 295,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(4),
-        border: Border.all(color: AppColors.blue7, width: 1),
+        borderRadius: BorderRadius.circular(10),
       ),
       child: TextFormField(
         controller: txtController,
@@ -913,17 +1017,29 @@ class CommonWidgets {
         cursorColor: AppColors.blue50,
         validator: validator,
         decoration: InputDecoration(
-          hintText: hinttext,
-          enabledBorder: InputBorder.none,
+          filled: true,
+          fillColor: AppColors.white,
+          floatingLabelStyle: TextStyle(color: AppColors.blue),
+          labelText: labeltext,
+          labelStyle: TextStyle(
+              fontSize: 14.sp,
+              fontWeight: FontWeight.w500,
+              color: AppColors.labelcolor),
+          border: OutlineInputBorder(),
+          enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: AppColors.white),
+              borderRadius: BorderRadius.circular(10.r)),
           errorBorder: OutlineInputBorder(
             borderSide: BorderSide.none,
-            borderRadius: BorderRadius.all(Radius.circular(85.r)),
+            borderRadius: BorderRadius.all(Radius.circular(10.r)),
           ),
           focusedErrorBorder: OutlineInputBorder(
             borderSide: BorderSide.none,
-            borderRadius: BorderRadius.all(Radius.circular(85.r)),
+            borderRadius: BorderRadius.all(Radius.circular(10.r)),
           ),
-          focusedBorder: InputBorder.none,
+          focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10.r),
+              borderSide: BorderSide(color: AppColors.blue)),
           contentPadding: EdgeInsets.all(12.w),
         ),
       ),

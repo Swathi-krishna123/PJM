@@ -49,6 +49,8 @@ class AppColors {
   static Color textcolor2 = const Color(0xff200E32);
   static Color shadow = const Color(0x1A000000);
   static Color shadow1 = const Color(0x0D000000);
+  static Color headline = const Color(0xff111827);
+  static Color labelcolor = const Color(0xff1A1C1E);
 
   ////////////////////////////MULTIPLE COLORS/////////////////////////////
 

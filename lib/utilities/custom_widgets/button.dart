@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../constants/colors.dart'; // Ensure AppColors is defined in your constants/colors.dart file.
 
 class ButtonCustom extends StatelessWidget {
@@ -19,7 +20,7 @@ class ButtonCustom extends StatelessWidget {
       width: width,
       height: height,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(4),
+        borderRadius: BorderRadius.circular(10.r),
         gradient: const LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
