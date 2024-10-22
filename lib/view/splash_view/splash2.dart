@@ -24,10 +24,11 @@ class _Splash2State extends State<Splash2> with SingleTickerProviderStateMixin {
 
     controller.addListener(() {
       if (controller.isCompleted) {
-        Navigator.of(context).push(
+        Navigator.of(context).pushAndRemoveUntil(
           MyCustomRouteTransition(
             route: const Splash3(),
           ),
+          (route) => false,
         );
 
         Timer(const Duration(milliseconds: 500), () {
