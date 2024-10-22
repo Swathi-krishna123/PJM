@@ -1,44 +1,103 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../constants/colors.dart';
-import 'dart:math' as math;
 
-class Splash2 extends StatelessWidget {
+import 'splash3.dart';
+
+class Splash2 extends StatefulWidget {
   const Splash2({super.key});
+
+  @override
+  State<Splash2> createState() => _Splash2State();
+}
+
+class _Splash2State extends State<Splash2> with SingleTickerProviderStateMixin {
+  late AnimationController controller;
+  late Animation<double> scaleAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+    controller = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 2),
+    );
+
+    controller.addListener(() {
+      if (controller.isCompleted) {
+        Navigator.of(context).push(
+          MyCustomRouteTransition(
+            route: const Splash3(),
+          ),
+        );
+
+        Timer(const Duration(milliseconds: 500), () {
+          controller.reset();
+        });
+      }
+    });
+
+    scaleAnimation = Tween<double>(begin: 1, end: 10).animate(controller);
+
+    // Automatically start the scale animation when the splash screen is displayed
+    Timer(const Duration(seconds: 1), () {
+      controller.forward();
+    });
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff244C81),
-      body: LayoutBuilder(
-      builder: (context, constraints) {
-        final width = constraints.maxWidth;
-        final height = constraints.maxHeight;
-        final diagonalLength = math.sqrt(width * width + height * height);
-        final stripeWidth = width * 0.33; // Adjust this value to change stripe width
-
-        return Stack(
-          children: [
-            Container(
-              color: const Color(0xFF1E3A8A), // Dark blue background
-            ),
-            Positioned(
-              left: -diagonalLength / 2 + width / 2,
-              top: -diagonalLength / 2 + height / 2,
-              child: Transform.rotate(
-                angle: math.pi / 3, // 45 degrees in radians
+      backgroundColor: const Color(0xff244C81),
+      body: Center(
+        child: ScaleTransition(
+          scale: scaleAnimation,
+          child: TweenAnimationBuilder(
+            tween: Tween<double>(begin: 5, end: 1500),
+            duration: const Duration(seconds: 4),
+            builder: (context, size, widget) {
+              return Transform.rotate(
+                angle: 150 * (3.14159 / 180), // Convert degrees to radians
                 child: Container(
-                  width: diagonalLength,
-                  height: stripeWidth,
-                  color: const Color(0xFFBFDBFE), // Light blue stripe
+                  height: size * 60,
+                  width: size,
+                  decoration: const BoxDecoration(
+                    color: Color(0xFFBFDBFE),
+                    shape: BoxShape.rectangle,
+                  ),
                 ),
-              ),
-            ),
-          ],
-        );
-      },
-    )
+              );
+            },
+          ),
+        ),
+      ),
     );
   }
+}
+
+class MyCustomRouteTransition extends PageRouteBuilder {
+  final Widget route;
+  MyCustomRouteTransition({required this.route})
+      : super(
+          pageBuilder: (context, animation, secondaryAnimation) {
+            return route;
+          },
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            final tween = Tween(
+              begin: const Offset(0, -1),
+              end: Offset.zero,
+            ).animate(
+              CurvedAnimation(parent: animation, curve: Curves.easeInOut),
+            );
+            return SlideTransition(
+              position: tween,
+              child: child,
+            );
+          },
+        );
 }
